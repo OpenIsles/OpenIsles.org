@@ -1,0 +1,121 @@
+
+/* Allgemeines */
+
+body {
+	font-family: serif;
+	color: #ffffff;
+	background: url(/img/background-body.png) 50% 0 repeat;
+}
+
+
+/* Header */
+
+/*noinspection CssOptimizeSimilarProperties*/
+#site-header {
+	height: 300px;
+	background: url(/img/background-header.png) 50% 0 repeat-x; /* 50% für alte Androids; die können calc() nicht */
+	background-position: calc(50% - 500px);
+}
+
+#site-header h1 {
+	font-size: 7rem;
+}
+#site-header h2 {
+	color: #ffffff;
+	font-size: 2.25rem;
+	text-shadow: 2px 2px 5px #000000;
+
+	position: relative;
+	left: 75px;
+	top: -30px;
+}
+
+#site-header .open {
+	color: hsl(235, 75%, 40%);
+	text-shadow:
+		-10px -10px 20px hsla(235, 10%, 90%, 0.15),
+		10px -10px 20px hsla(235, 10%, 90%, 0.15),
+		10px 10px 20px hsla(235, 10%, 90%, 0.15),
+		-10px 10px 20px hsla(235, 10%, 90%, 0.15),
+		5px 5px hsl(235, 75%, 20%),
+		-2px -2px hsl(235, 75%, 60%);
+
+}
+#site-header .isles {
+	color: hsl(115, 55%, 45%);
+	text-shadow:
+		-10px -10px 20px hsla(115, 10%, 90%, 0.15),
+		10px -10px 20px hsla(115, 10%, 90%, 0.15),
+		10px 10px 20px hsla(115, 10%, 90%, 0.15),
+		-10px 10px 20px hsla(115, 10%, 90%, 0.15),
+		5px 5px hsl(115, 55%, 25%),
+		-2px -2px hsl(115, 55%, 65%);
+	font-weight: bold;
+}
+
+
+/* Topbar */
+
+.top-bar,
+.top-bar.expanded,
+.top-bar.expanded .title-area,
+.top-bar-section ul li,
+.top-bar-section ul li > a.button.secondary,
+.top-bar-section ul li > a.button.secondary:hover,
+.top-bar-section ul li > a.button.secondary:focus,
+.top-bar-section ul li > a.button.info,
+.top-bar-section ul li > button.secondary,
+.top-bar-section ul li > button.secondary:hover,
+.top-bar-section ul li > button.secondary:focus,
+.top-bar-section ul li > button.info,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section .dropdown li a,
+.top-bar-section .dropdown li label,
+.top-bar-section .has-form,
+.contain-to-grid {
+	background-color: hsl(235, 75%, 40%);
+}
+
+.top-bar-section ul li:hover:not(.has-form) > a,
+.top-bar-section li.hover > a:not(.button),
+.top-bar-section li:not(.has-form) a:not(.button):hover,
+.top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button),
+.no-js .top-bar-section ul li:hover > a {
+	background-color: hsl(235, 75%, 60%);
+}
+
+button, .button,
+button.disabled, button[disabled], .button.disabled, .button[disabled],
+button.disabled:hover, button.disabled:focus, button[disabled]:hover, button[disabled]:focus,
+.button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus,
+.top-bar-section ul li > a.button,
+.top-bar-section ul li > button,
+.top-bar-section ul li.active > a,
+.top-bar-section li.active:not(.has-form) a:not(.button),
+.no-js .top-bar-section ul li:active > a {
+	background-color: hsl(235, 75%, 20%);
+}
+
+a:hover, a:focus,
+.top-bar-section ul li.active > a:hover,
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+	background-color: hsl(235, 75%, 30%);
+}
+
+
+/* Site-Wrapper */
+
+#page-wrapper {
+	background: url(/img/background-page.png) 50% bottom repeat-y;
+	color: #ffffff;
+
+	padding-top: 1em;
+}
+
+
+/* Footer */
+
+#site-footer {
+	height: 288px;
+	background: url(/img/background-footer.png) 50% 0 no-repeat;
+}
