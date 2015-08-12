@@ -49,7 +49,7 @@ $staticPages = array(
 		'navsActive' => array('game-infos', 'game-infos/ships')
 	),
 	'/contact.html' => array(
-		'title' => 'Kontakt &amp; Impressum',
+		'title' => 'Kontakt & Impressum',
 		'template' => 'contact.tpl',
 		'navsActive' => array('contact')
 	)
