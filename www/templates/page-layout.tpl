@@ -86,8 +86,20 @@
 
         <footer id="site-footer">
             <div class="row">
-                <div class="small-12 small-centered columns text-center">
-                    TODO Footer here
+                <div class="small-12 small-only-text-center large-6 columns">
+                    {capture assign=year}{$smarty.now|date_format:"%Y"}{/capture}
+                    OpenIsles – Copyright © 2015{if $year != '2015'}-{$year}{/if}
+                    <br class="show-for-small-only" />Alexander Münch
+                    <br />powered by <a href="http://thehacker.biz">theHacker</a>
+                </div>
+
+                <div class="small-12 small-only-text-center text-right large-6 columns">
+                    <br class="show-for-small-only" />
+                    <a href="http://www.w3.org/html/logo/" class="noLinkBackground">
+                        <img src="/img/html5-badge-h-css3-semantics.png" width="165" height="64"
+                             alt="HTML5 Powered with CSS3 / Styling, and Semantics"
+                             title="HTML5 Powered with CSS3 / Styling, and Semantics" />
+                    </a>
                 </div>
             </div>
         </footer>

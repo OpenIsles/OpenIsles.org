@@ -13,6 +13,17 @@ code {
 	font-family: 'Droid Sans Mono', 'Liberation Mono', Consolas, Courier, monospace;
 }
 
+a {
+	color: hsl(235, 100%, 50%);
+}
+a:hover, a:focus {
+	color: #ffffff;
+	background: hsl(235, 100%, 50%);
+}
+a.noLinkBackground:hover, a.noLinkBackground:focus {
+	background: none;
+}
+
 
 /* Body */
 
@@ -59,19 +70,19 @@ body {
 }
 #site-header .show-for-medium-up .open {
 	text-shadow:
-		-10px -10px 20px hsla(235, 10%, 90%, 0.15),
-		10px -10px 20px hsla(235, 10%, 90%, 0.15),
-		10px 10px 20px hsla(235, 10%, 90%, 0.15),
-		-10px 10px 20px hsla(235, 10%, 90%, 0.15),
+		-10px -10px 20px hsla(235, 10%, 90%, .15),
+		10px -10px 20px hsla(235, 10%, 90%, .15),
+		10px 10px 20px hsla(235, 10%, 90%, .15),
+		-10px 10px 20px hsla(235, 10%, 90%, .15),
 		5px 5px hsl(235, 75%, 20%),
 		-2px -2px hsl(235, 75%, 60%);
 }
 #site-header .show-for-small-only .open {
 	text-shadow:
-		-10px -10px 20px hsla(235, 10%, 90%, 0.15),
-		10px -10px 20px hsla(235, 10%, 90%, 0.15),
-		10px 10px 20px hsla(235, 10%, 90%, 0.15),
-		-10px 10px 20px hsla(235, 10%, 90%, 0.15),
+		-10px -10px 20px hsla(235, 10%, 90%, .15),
+		10px -10px 20px hsla(235, 10%, 90%, .15),
+		10px 10px 20px hsla(235, 10%, 90%, .15),
+		-10px 10px 20px hsla(235, 10%, 90%, .15),
 		5px 5px hsl(235, 75%, 20%),
 		-2px -2px hsl(235, 75%, 60%);
 }
@@ -82,19 +93,19 @@ body {
 }
 #site-header .show-for-medium-up .isles {
 	text-shadow:
-		-10px -10px 20px hsla(115, 10%, 90%, 0.15),
-		10px -10px 20px hsla(115, 10%, 90%, 0.15),
-		10px 10px 20px hsla(115, 10%, 90%, 0.15),
-		-10px 10px 20px hsla(115, 10%, 90%, 0.15),
+		-10px -10px 20px hsla(115, 10%, 90%, .15),
+		10px -10px 20px hsla(115, 10%, 90%, .15),
+		10px 10px 20px hsla(115, 10%, 90%, .15),
+		-10px 10px 20px hsla(115, 10%, 90%, .15),
 		5px 5px hsl(115, 55%, 25%),
 		-2px -2px hsl(115, 55%, 65%);
 }
 #site-header .show-for-small-only .isles {
 	text-shadow:
-		-10px -10px 20px hsla(115, 10%, 90%, 0.15),
-		10px -10px 20px hsla(115, 10%, 90%, 0.15),
-		10px 10px 20px hsla(115, 10%, 90%, 0.15),
-		-10px 10px 20px hsla(115, 10%, 90%, 0.15),
+		-10px -10px 20px hsla(115, 10%, 90%, .15),
+		10px -10px 20px hsla(115, 10%, 90%, .15),
+		10px 10px 20px hsla(115, 10%, 90%, .15),
+		-10px 10px 20px hsla(115, 10%, 90%, .15),
 		5px 5px hsl(115, 55%, 25%),
 		-2px -2px hsl(115, 55%, 65%);
 }
@@ -168,4 +179,6 @@ a:hover, a:focus,
 #site-footer {
 	height: 288px;
 	background: url(/img/background-footer.png) 50% 0 no-repeat;
+	color: rgba(255, 255, 255, .75);
+	font-size: 0.75em;
 }
