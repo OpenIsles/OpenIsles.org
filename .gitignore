@@ -1,3 +1,6 @@
 # IntelliJ-Intera
 .idea
 OpenIsles.org.iml
+
+# Smarty: kompilierte Templates
+templates_c/

@@ -4,13 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>OpenIsles – das freie Insel-Aufbauspiel</title>
+        <title>{if isset($title)}{$title|escape} – OpenIsles{else}OpenIsles – das freie Insel-Aufbauspiel{/if}</title>
 
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/foundation.min.css" />
-        <link rel="stylesheet" href="css/openisles.css" />
+        <link rel="stylesheet" href="/css/normalize.css" />
+        <link rel="stylesheet" href="/css/foundation.min.css" />
+        <link rel="stylesheet" href="/css/openisles.css" />
 
-        <script src="js/vendor/modernizr.js"></script>
+        <script src="/js/vendor/modernizr.js"></script>
     </head>
 
     <body>
@@ -36,25 +36,39 @@
 
                 <section class="top-bar-section">
                     <ul class="left">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Screenshots</a></li>
-                        <li class="has-dropdown">
-                            <a href="#">Spielinfos</a>
+                        <li{if isset($navsActive['home'])} class="active"{/if}>
+                            <a href="/">Home</a>
+                        </li>
+                        <li{if isset($navsActive['faq'])} class="active"{/if}>
+                            <a href="/faq.html">FAQ</a>
+                        </li>
+                        <li{if isset($navsActive['screenshots'])} class="active"{/if}>
+                            <a href="/screenshots.html">Screenshots</a>
+                        </li>
+                        <li class="has-dropdown{if isset($navsActive['game-infos'])} active{/if}">
+                            <a href="/game-infos.html">Spielinfos</a>
                             <ul class="dropdown">
-                                <li><a href="#">Waren</a></li>
-                                <li><a href="#">Gebäude</a></li>
-                                <li><a href="#">Bewohner</a></li>
-                                <li><a href="#">Schiffe</a></li>
+                                <li{if isset($navsActive['game-infos/goods'])} class="active"{/if}>
+                                    <a href="/game-infos/goods.html">Waren</a>
+                                </li>
+                                <li{if isset($navsActive['game-infos/buildings'])} class="active"{/if}>
+                                    <a href="/game-infos/buildings.html">Gebäude</a>
+                                </li>
+                                <li{if isset($navsActive['game-infos/population'])} class="active"{/if}>
+                                    <a href="/game-infos/population.html">Einwohner</a>
+                                </li>
+                                <li{if isset($navsActive['game-infos/ships'])} class="active"{/if}>
+                                    <a href="/game-infos/ships.html">Schiffe</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
 
                     <ul class="right">
-                        <li><a href="#" class="alert button"><strong>Download</strong></a></li>
+                        <li><a href="/download.html" class="alert button"><strong>Download</strong></a></li>
                         <li>&nbsp;</li>
                         <li>
-                            <a href="https://github.com/OpenIsles" class="success button">
+                            <a href="/github.html" class="success button">
                                 <img src="/img/github-white.png" alt="GitHub"
                                      style="vertical-align: baseline; width: 12px; height: 12px;"/>
                                 GitHub
@@ -67,13 +81,7 @@
         </div>
 
         <section id="page-wrapper">
-            <div class="row">
-                <div class="small-12 small-centered columns">
-                    <p>
-                        Testtext
-                    </p>
-                </div>
-            </div>
+            {$pageContent}
         </section>
 
         <footer id="site-footer">
@@ -87,8 +95,8 @@
         <script src="/js/vendor/jquery.js"></script>
         <script src="/js/vendor/fastclick.js"></script>
 
-        <script src="js/foundation/foundation.js"></script>
-        <script src="js/foundation/foundation.topbar.js"></script>
+        <script src="/js/foundation/foundation.js"></script>
+        <script src="/js/foundation/foundation.topbar.js"></script>
         <script>
             $(document).foundation({
                 topbar: {
