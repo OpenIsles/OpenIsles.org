@@ -44,6 +44,11 @@ $staticPages = array(
 		'title' => 'Schiffe',
 		'template' => 'more-to-come.tpl',
 		'navsActive' => array('game-infos', 'game-infos/ships')
+	),
+	'/contact.html' => array(
+		'title' => 'Kontakt &amp; Impressum',
+		'template' => 'contact.tpl',
+		'navsActive' => array('contact')
 	)
 );
 

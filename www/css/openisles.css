@@ -13,6 +13,11 @@ code {
 	font-family: 'Droid Sans Mono', 'Liberation Mono', Consolas, Courier, monospace;
 }
 
+body,
+h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;
+}
+
 a {
 	color: hsl(235, 100%, 50%);
 }
@@ -28,7 +33,6 @@ a.noLinkBackground:hover, a.noLinkBackground:focus {
 /* Body */
 
 body {
-	color: #ffffff;
 	background: url(/img/background-body.png) 50% 0 repeat;
 }
 
@@ -178,7 +182,18 @@ a:hover, a:focus,
 
 #site-footer {
 	height: 288px;
+	padding-top: 4em;
 	background: url(/img/background-footer.png) 50% 0 no-repeat;
 	color: rgba(255, 255, 255, .75);
 	font-size: 0.75em;
+}
+
+
+/* Impressum */
+
+.vcard .fn {
+	font-weight: normal;
+}
+.vcard .nickname {
+	font-weight: bold;
 }

@@ -26,7 +26,7 @@
         </header>
 
         <div class="contain-to-grid sticky">
-            <nav class="top-bar" data-topbar role="navigation">
+            <nav class="top-bar" data-topbar>
                 <ul class="title-area">
                     <li class="name">
                         <h1><a href="/">OpenIsles</a></h1>
@@ -61,6 +61,9 @@
                                     <a href="/game-infos/ships.html">Schiffe</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li{if isset($navsActive['contact'])} class="active"{/if}>
+                            <a href="/contact.html">Kontakt &amp; Impressum</a>
                         </li>
                     </ul>
 
