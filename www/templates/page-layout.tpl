@@ -76,10 +76,14 @@
                     </ul>
 
                     <ul class="right">
-                        <li><a href="/download.html" class="alert button"><strong>Download</strong></a></li>
+                        <li>
+                            <a href="/download.html" class="alert button"target="_blank" rel="nofollow">
+                                <strong>Download</strong>
+                            </a>
+                        </li>
                         <li>&nbsp;</li>
                         <li>
-                            <a href="/github.html" class="success button">
+                            <a href="/github.html" class="success button" target="_blank" rel="nofollow">
                                 <img src="/img/github-white.png" alt="GitHub"
                                      style="vertical-align: baseline; width: 12px; height: 12px;"/>
                                 GitHub
@@ -87,7 +91,6 @@
                         </li>
                     </ul>
                 </section>
-
             </nav>
         </div>
 
@@ -101,12 +104,12 @@
                     {capture assign=year}{$smarty.now|date_format:"%Y"}{/capture}
                     OpenIsles – Copyright © 2015{if $year != '2015'}-{$year}{/if}
                     <br class="show-for-small-only" />Alexander Münch
-                    <br />powered by <a href="http://thehacker.biz">theHacker</a>
+                    <br />powered by <a href="http://thehacker.biz" target="_blank" rel="nofollow">theHacker</a>
                 </div>
 
                 <div class="small-12 small-only-text-center text-right large-6 columns">
                     <br class="show-for-small-only" />
-                    <a href="http://www.w3.org/html/logo/" class="noLinkBackground">
+                    <a href="http://www.w3.org/html/logo/" target="_blank" rel="nofollow" class="noLinkBackground">
                         <img src="/img/html5-badge-h-css3-multimedia-semantics.png" width="197" height="64"
                              alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics"
                              title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" />
