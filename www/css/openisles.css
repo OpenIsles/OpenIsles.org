@@ -197,3 +197,10 @@ a:hover, a:focus,
 .vcard .nickname {
 	font-weight: bold;
 }
+
+
+/* Screenshots */
+
+.screenshot-date {
+	font-size: .8em;
+}

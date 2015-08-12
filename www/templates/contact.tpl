@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="small-12 small-centered columns">
+	<div class="small-12 columns">
 		<h1>Kontakt &amp; Impressum</h1>
 		<p>
 			<b>OpenIsles</b> und diese Webseite sind ein Projekt von

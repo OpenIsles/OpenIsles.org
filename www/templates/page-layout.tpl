@@ -42,8 +42,16 @@
                         <li{if isset($navsActive['faq'])} class="active"{/if}>
                             <a href="/faq.html">FAQ</a>
                         </li>
-                        <li{if isset($navsActive['screenshots'])} class="active"{/if}>
-                            <a href="/screenshots.html">Screenshots</a>
+                        <li class="has-dropdown{if isset($navsActive['media'])} active{/if}">
+                            <a href="/media.html">Medien</a>
+                            <ul class="dropdown">
+                                <li{if isset($navsActive['media/screenshots'])} class="active"{/if}>
+                                    <a href="/media/screenshots.html">Screenshots</a>
+                                </li>
+                                <li{if isset($navsActive['media/videos'])} class="active"{/if}>
+                                    <a href="/media/videos.html">Videos</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="has-dropdown{if isset($navsActive['game-infos'])} active{/if}">
                             <a href="/game-infos.html">Spielinfos</a>
@@ -111,6 +119,7 @@
         <script src="/js/vendor/fastclick.js"></script>
 
         <script src="/js/foundation/foundation.js"></script>
+        <script src="/js/foundation/foundation.clearing.js"></script>
         <script src="/js/foundation/foundation.topbar.js"></script>
         <script>
             $(document).foundation({

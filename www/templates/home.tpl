@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="small-12 small-centered columns">
+	<div class="small-12 columns">
 		<h1>Willkommen auf OpenIsles!</h1>
 		<p>
 			Mit einem kleinen Schiff und etwas Baumaterial findet man sich inmitten einer idyllischen Inselwelt.

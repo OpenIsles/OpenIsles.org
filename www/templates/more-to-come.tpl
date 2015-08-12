@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="small-12 small-centered columns">
+	<div class="small-12 columns">
 		<h1>- Baustelle -</h1>
 		<p>
 			Sorry, dieser Bereich ist noch nicht fertig.<br />

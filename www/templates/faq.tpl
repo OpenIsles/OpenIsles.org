@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="small-12 small-centered columns">
+	<div class="small-12 columns">
 		<h1>FAQ – häufig gestellte Fragen</h1>
 		<dl>
 			<dt>Hey, das kenn ich! Das is doch Anno&nbsp;1602.</dt>
