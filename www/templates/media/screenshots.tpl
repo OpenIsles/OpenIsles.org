@@ -7,7 +7,7 @@
 				<li>
 					<a href="/media/screenshots/{$screenshot.fileprefix}.png">
 						<img src="/media/screenshots/{$screenshot.fileprefix}.thumb.png"
-							 data-caption="<span class='screenshot-date'>{$screenshot.date|date_format:"%e. %B %Y, %T"} Uhr:</span><br />{$screenshot.description|escape}" />
+							 data-caption="<span class='media-date'>{$screenshot.date|date_format:"%e. %B %Y, %T"} Uhr:</span><br />{$screenshot.description|escape}" />
 					</a>
 				</li>
 			{/foreach}
