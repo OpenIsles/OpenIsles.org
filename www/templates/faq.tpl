@@ -10,6 +10,12 @@
 				verfügbar.
 			</dd>
 
+			<dt>Ist das Spiel gratis?</dt>
+			<dd>
+				Besser. OpenIsles ist freie Software! D.&nbsp;h. die Software ist nicht nur gratis, sondern gibt
+				dir auch die Freiheit, sie beliebig zu verbessern und die Möglichkeit, an ihr mitzuarbeiten.
+			</dd>
+
 			<dt>Wie kann ich spielen?</dt>
 			<dd>
 				Aktuell ist das Spiel noch in einer sehr frühen Entwicklungsphase. Es gibt noch keinen Build,

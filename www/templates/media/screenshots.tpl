@@ -1,7 +1,11 @@
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Screenshots</h1>
-		<p>Eindrücke vom Spiel. Klick die Thumbnails an, um sie vergrößert und mit Beschreibung anzuzeigen.</p>
+		<p>
+			Impressionen vom Spiel und der Entwicklung, chronologisch sortiert. Die neuesten Screenshots sind oben.
+			<br />
+			Klick die Thumbnails an, um die Screenshots vergrößert und mit Beschreibung anzuzeigen.
+		</p>
 		<ul class="clearing-thumbs large-block-grid-4" data-clearing>
 			{foreach $screenshots as $screenshot}
 				<li>

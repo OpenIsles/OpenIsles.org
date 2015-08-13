@@ -1,7 +1,10 @@
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Videos</h1>
-		<p>Hier sind einige Videos zum Spiel gelistet:</p>
+		<p>
+			Videos vom Spiel und der Entwicklung, chronologisch sortiert. Die neuesten Videos sind oben.
+			<small>Ok, sind erst zwei Stück ;-)</small>
+		</p>
 		<ul class="large-block-grid-2">
 			{foreach $videos as $video}
 				<li>

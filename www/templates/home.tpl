@@ -10,14 +10,15 @@
 		<hr />
 
 		<p>
-			OpenIsles ist ein Insel-Aufbauspiel, was sich maßgeblich an dem Klassiker Anno&nbsp;1602 orientiert.<br />
-			Das Hauptziel dieses Projekt ist es, einerseits das Spiel als Nachbau für die Linux-Gemeide zur Verfügung
-			zu stellen und gleichzeitig die Möglichkeit zu schaffen, alle Faktoren des Spiels umzukonfigurieren
-			und beliebig zu erweitern.
+			OpenIsles ist ein freies Insel-Aufbauspiel, was sich maßgeblich an dem Klassiker Anno&nbsp;1602
+			orientiert.<br />
+			Das Hauptziel dieses Projekt ist es, einerseits das Spiel als Nachbau für die Linux-Community zur
+			Verfügung zu stellen und gleichzeitig die Möglichkeit zu schaffen, alle Faktoren des Spiels
+			umzukonfigurieren und beliebig zu erweitern.
 		</p>
 		<p>
 			Ich hab viel Wert auf Detailtreue gelegt, sowohl bei den Grafiken, als auch bei der Spielmechanik.
-			Gleichzeitig sind aber auch diverse Sachen verbessert worden.
+			Gleichzeitig sind aber auch diverse Sachen aus dem Klassiker verbessert worden.
 		</p>
 		<p>
 			Aktuell befindet sich das Spiel in einer sehr frühen Entwicklungsphase. Viele Features sind noch nicht
