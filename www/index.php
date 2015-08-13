@@ -50,8 +50,11 @@ $staticPages = array(
 	),
 	'/contact.html' => array(
 		'title' => 'Kontakt & Impressum',
-		'template' => 'contact.tpl',
-		'navsActive' => array('contact')
+		'template' => 'contact.tpl'
+	),
+	'/privacy.html' => array(
+		'title' => 'Datenschutz',
+		'template' => 'privacy.tpl'
 	)
 );
 

@@ -70,14 +70,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li{if isset($navsActive['contact'])} class="active"{/if}>
-                            <a href="/contact.html">Kontakt &amp; Impressum</a>
-                        </li>
                     </ul>
 
                     <ul class="right">
                         <li>
-                            <a href="/download.html" class="alert button"target="_blank" rel="nofollow">
+                            <a href="/download.html" class="alert button" target="_blank" rel="nofollow">
                                 <strong>Download</strong>
                             </a>
                         </li>
@@ -100,14 +97,20 @@
 
         <footer id="site-footer">
             <div class="row">
-                <div class="small-12 small-only-text-center large-6 columns">
+                <div class="small-12 medium-4 columns small-only-text-center">
                     {capture assign=year}{$smarty.now|date_format:"%Y"}{/capture}
                     OpenIsles – Copyright © 2015{if $year != '2015'}-{$year}{/if}
                     <br class="show-for-small-only" />Alexander Münch
                     <br />powered by <a href="http://thehacker.biz" target="_blank" rel="nofollow">theHacker</a>
                 </div>
 
-                <div class="small-12 small-only-text-center text-right large-6 columns">
+                <div class="small-12 medium-4 columns text-center">
+                    <br class="show-for-small-only" />
+                    <a href="/contact.html">Kontakt &amp; Impressum</a> |
+                    <a href="/privacy.html">Datenschutz</a>
+                </div>
+
+                <div class="small-12 text-right medium-4 columns small-only-text-center">
                     <br class="show-for-small-only" />
                     <a href="http://www.w3.org/html/logo/" target="_blank" rel="nofollow" class="noLinkBackground">
                         <img src="/img/html5-badge-h-css3-multimedia-semantics.png" width="197" height="64"
@@ -131,5 +134,23 @@
                 }
             });
         </script>
+
+        <script type="text/javascript">
+            var _paq = _paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u = "//piwik.thehacker.biz/";
+                _paq.push(['setTrackerUrl', u + 'piwik.php']);
+                _paq.push(['setSiteId', 1]);
+                var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+                g.type = 'text/javascript';
+                g.async = true;
+                g.defer = true;
+                g.src = u + 'piwik.js';
+                s.parentNode.insertBefore(g, s);
+            })();
+        </script>
+        <noscript><img src="//piwik.thehacker.biz/piwik.php?idsite=1" alt="" /></noscript>
     </body>
 </html>
