@@ -10,6 +10,6 @@
 if (preg_match('/\.(?:png|jpeg|css|js|ogv)$/', $_SERVER['REQUEST_URI'])) {
 	return false;
 } else {
-	$disablePiwik = true; // kein Piwik-Aufruf, wenn wir lokal entwickeln
+	$isLocalDevelopment = true;
 	include(__DIR__ . '/index.php');
 }

@@ -5,6 +5,10 @@ setlocale(LC_TIME, 'de_DE.UTF-8', 'de_DE@euro', 'de_DE', 'de');
 
 require_once('smarty/libs/Smarty.class.php');
 $smarty = new Smarty;
+if (isset($isLocalDevelopment)) {
+	$smarty->setForceCompile(true); // Smarty zum Re-Compile der Templates zwingen, damit wir sofort F5 machen können.
+	$smarty->assign('isLocalDevelopment', true);
+}
 
 // statische Seiten
 $staticPages = array(
@@ -254,11 +258,6 @@ else if ($requestUrl == '/github.html') {
 // 404
 else {
 	$pageContent = $smarty->fetch('404.tpl');
-}
-
-
-if (isset($disablePiwik)) {
-	$smarty->assign('disablePiwik', true);
 }
 
 $smarty->assign('navsActive', $navsActive);

@@ -135,7 +135,7 @@
 			});
 		</script>
 
-		{if !isset($disablePiwik)}
+		{$piwikIdSite=(isset($isLocalDevelopment)) ? 3 : 1}
 		<script type="text/javascript">
 			var _paq = _paq || [];
 			_paq.push(['trackPageView']);
@@ -143,7 +143,7 @@
 			(function() {
 				var u = "//piwik.thehacker.biz/";
 				_paq.push(['setTrackerUrl', u + 'piwik.php']);
-				_paq.push(['setSiteId', 1]);
+				_paq.push(['setSiteId', {$piwikIdSite}]);
 				var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
 				g.type = 'text/javascript';
 				g.async = true;
@@ -152,7 +152,6 @@
 				s.parentNode.insertBefore(g, s);
 			})();
 		</script>
-		<noscript><img src="//piwik.thehacker.biz/piwik.php?idsite=1" alt="" /></noscript>
-		{/if}
+		<noscript><img src="//piwik.thehacker.biz/piwik.php?idsite={$piwikIdSite}" alt="" /></noscript>
 	</body>
 </html>
