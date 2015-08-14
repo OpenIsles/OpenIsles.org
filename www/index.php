@@ -243,18 +243,6 @@ else if ($requestUrl == '/media/videos.html') {
 	$navsActive['media/videos'] = true;
 }
 
-// Download
-else if ($requestUrl == '/download.html') {
-	header("Location: https://github.com/OpenIsles/OpenIsles/archive/master.zip");
-	exit;
-}
-
-// GitHib
-else if ($requestUrl == '/github.html') {
-	header("Location: https://github.com/OpenIsles/");
-	exit;
-}
-
 // 404
 else {
 	$pageContent = $smarty->fetch('404.tpl');

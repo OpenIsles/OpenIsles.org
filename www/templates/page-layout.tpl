@@ -4,6 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+		<meta name="author" content="Alexander Münch" />
+		{capture assign=year}{$smarty.now|date_format:"%Y"}{/capture}
+		{capture assign=copyright}Copyright © 2015{if $year != '2015'}-{$year}{/if}{/capture}
+		<meta name="copyright" content="{$copyright|escape} Alexander Münch" />
+
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="de" />
+
 		<title>{if isset($title)}{$title|escape} – OpenIsles{else}OpenIsles – das freie Insel-Aufbauspiel{/if}</title>
 
 		<link rel="stylesheet" href="/css/normalize.css" />
@@ -74,13 +82,15 @@
 
 					<ul class="right">
 						<li>
-							<a href="/download.html" class="alert button" target="_blank" rel="nofollow">
+							<a href="https://github.com/OpenIsles/OpenIsles/archive/master.zip"
+							   class="alert button" target="_blank" rel="nofollow">
 								<strong>Download</strong>
 							</a>
 						</li>
 						<li>&nbsp;</li>
 						<li>
-							<a href="/github.html" class="success button" target="_blank" rel="nofollow">
+							<a href="https://github.com/OpenIsles/" class="success button"
+							   target="_blank" rel="nofollow">
 								<img src="/img/github-white.png" alt="GitHub"
 									 style="vertical-align: baseline; width: 12px; height: 12px;"/>
 								GitHub
@@ -98,8 +108,7 @@
 		<footer id="site-footer">
 			<div class="row">
 				<div class="small-12 medium-4 columns small-only-text-center">
-					{capture assign=year}{$smarty.now|date_format:"%Y"}{/capture}
-					OpenIsles – Copyright © 2015{if $year != '2015'}-{$year}{/if}
+					OpenIsles – {$copyright}
 					<br class="show-for-small-only" />Alexander Münch
 					<br />powered by <a href="http://thehacker.biz" target="_blank" rel="nofollow">theHacker</a>
 				</div>
