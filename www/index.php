@@ -256,6 +256,11 @@ else {
 	$pageContent = $smarty->fetch('404.tpl');
 }
 
+
+if (isset($disablePiwik)) {
+	$smarty->assign('disablePiwik', true);
+}
+
 $smarty->assign('navsActive', $navsActive);
 $smarty->assign('pageContent', $pageContent);
 $smarty->display('page-layout.tpl');
