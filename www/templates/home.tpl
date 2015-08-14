@@ -4,7 +4,7 @@
 		<p>
 			Mit einem kleinen Schiff und etwas Baumaterial findet man sich inmitten einer idyllischen Inselwelt.
 			Nun heißt es Inseln erkunden, Siedlungen errichten und deren Einwohner mit Gütern und öffentlichen
-			Gebäude zu versorgen.
+			Gebäuden zu versorgen.
 		</p>
 
 		<hr />
