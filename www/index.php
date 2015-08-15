@@ -82,6 +82,13 @@ else if ($requestUrl == '/media/videos.html') {
 	$smarty->display('media/videos.tpl');
 }
 
+// XML-Sitemap
+else if ($requestUrl == '/sitemap.xml') {
+	header("Content-Type: text/xml; charset=UTF-8");
+
+	$smarty->display('sitemap.xml.tpl');
+}
+
 // 404
 else {
 	$smarty->display('404.tpl');
