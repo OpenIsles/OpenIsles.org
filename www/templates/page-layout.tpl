@@ -17,7 +17,9 @@
 		{capture "title"}{block "title"}{/block}{/capture}
 		<title>
 			{if $smarty.capture.title != ''}{$smarty.capture.title} – OpenIsles
-			{else}OpenIsles – das freie Insel-Aufbauspiel
+			{else}
+				<translate lang="de">OpenIsles – das freie Insel-Aufbauspiel</translate>
+				<translate lang="en">OpenIsles – the free island-building game</translate>
 			{/if}
 		</title>
 
@@ -32,11 +34,17 @@
 		<header id="site-header">
 			<div class="row text-center show-for-medium-up">
 				<h1><span class="open">Open</span><span class="isles">Isles</span></h1>
-				<h2>das freie Insel-Aufbauspiel</h2>
+				<h2>
+					<translate lang="de">das freie Insel-Aufbauspiel</translate>
+					<translate lang="en">the free island-building game</translate>
+				</h2>
 			</div>
 			<div class="row text-center show-for-small-only">
 				<h1><span class="open">Open</span><span class="isles">Isles</span></h1>
-				<h2>das freie Insel-Aufbauspiel</h2>
+				<h2>
+					<translate lang="de">das freie Insel-Aufbauspiel</translate>
+					<translate lang="en">the free island-building game</translate>
+				</h2>
 			</div>
 		</header>
 
@@ -46,42 +54,75 @@
 					<li class="name">
 						<h1><a href="/">OpenIsles</a></h1>
 					</li>
-					<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+					<li class="toggle-topbar menu-icon"><a href="#"><span>
+						<translate lang="de">Menü</translate>
+						<translate lang="en">Menu</translate>
+					</span></a></li>
 				</ul>
 
 				<section class="top-bar-section">
 					<ul class="left">
 						<li{if isset($navsActive['home'])} class="active"{/if}>
-							<a href="/">Home</a>
+							<a href="/">
+								<translate lang="de">Startseite</translate>
+								<translate lang="en">Home</translate>
+							</a>
 						</li>
 						<li{if isset($navsActive['faq'])} class="active"{/if}>
-							<a href="/faq.html">FAQ</a>
+							<a href="/faq.html">
+								<translate lang="de">FAQ</translate>
+								<translate lang="en">FAQ</translate>
+							</a>
 						</li>
 						<li class="has-dropdown{if isset($navsActive['media'])} active{/if}">
-							<a href="/media.html">Medien</a>
+							<a href="/media.html">
+								<translate lang="de">Medien</translate>
+								<translate lang="en">Media</translate>
+							</a>
 							<ul class="dropdown">
 								<li{if isset($navsActive['media/screenshots'])} class="active"{/if}>
-									<a href="/media/screenshots.html">Screenshots</a>
+									<a href="/media/screenshots.html">
+										<translate lang="de">Screenshots</translate>
+										<translate lang="en">Screenshots</translate>
+									</a>
 								</li>
 								<li{if isset($navsActive['media/videos'])} class="active"{/if}>
-									<a href="/media/videos.html">Videos</a>
+									<a href="/media/videos.html">
+										<translate lang="de">Videos</translate>
+										<translate lang="en">Videos</translate>
+									</a>
 								</li>
 							</ul>
 						</li>
 						<li class="has-dropdown{if isset($navsActive['game-infos'])} active{/if}">
-							<a href="/game-infos.html">Spielinfos</a>
+							<a href="/game-infos.html">
+								<translate lang="de">Spielinfos</translate>
+								<translate lang="en">Game info</translate>
+							</a>
 							<ul class="dropdown">
 								<li{if isset($navsActive['game-infos/goods'])} class="active"{/if}>
-									<a href="/game-infos/goods.html">Waren</a>
+									<a href="/game-infos/goods.html">
+										<translate lang="de">Waren</translate>
+										<translate lang="en">Goods</translate>
+									</a>
 								</li>
 								<li{if isset($navsActive['game-infos/buildings'])} class="active"{/if}>
-									<a href="/game-infos/buildings.html">Gebäude</a>
+									<a href="/game-infos/buildings.html">
+										<translate lang="de">Gebäude</translate>
+										<translate lang="en">Buildings</translate>
+									</a>
 								</li>
-								<li{if isset($navsActive['game-infos/population'])} class="active"{/if}>
-									<a href="/game-infos/population.html">Einwohner</a>
+								<li{if isset($navsActive['game-infos/inhabitants'])} class="active"{/if}>
+									<a href="/game-infos/inhabitants.html">
+										<translate lang="de">Einwohner</translate>
+										<translate lang="en">Inhabitants</translate>
+									</a>
 								</li>
 								<li{if isset($navsActive['game-infos/ships'])} class="active"{/if}>
-									<a href="/game-infos/ships.html">Schiffe</a>
+									<a href="/game-infos/ships.html">
+										<translate lang="de">Schiffe</translate>
+										<translate lang="en">Ships</translate>
+									</a>
 								</li>
 							</ul>
 						</li>
@@ -122,8 +163,14 @@
 
 				<div class="small-12 medium-4 columns text-center">
 					<br class="show-for-small-only" />
-					<a href="/contact.html">Kontakt &amp; Impressum</a> |
-					<a href="/privacy.html">Datenschutz</a>
+					<a href="/contact.html">
+						<translate lang="de">Kontakt &amp; Impressum</translate>
+						<translate lang="en">Contact &amp; Imprint</translate>
+					</a> |
+					<a href="/privacy.html">
+						<translate lang="de">Datenschutz</translate>
+						<translate lang="en">Privacy</translate>
+					</a>
 				</div>
 
 				<div class="small-12 text-right medium-4 columns small-only-text-center">
@@ -143,10 +190,15 @@
 		<script src="/js/foundation/foundation.js"></script>
 		<script src="/js/foundation/foundation.clearing.js"></script>
 		<script src="/js/foundation/foundation.topbar.js"></script>
+
+		{capture backText}
+			<translate lang="de">zurück</translate>
+			<translate lang="en">back</translate>
+		{/capture}
 		<script>
 			$(document).foundation({
 				topbar: {
-					back_text: 'zurück'
+					back_text: '{$smarty.capture.backText|trim}'
 				}
 			});
 		</script>
@@ -154,6 +206,7 @@
 		{$piwikIdSite=(isset($isLocalDevelopment)) ? 3 : 1}
 		<script type="text/javascript">
 			var _paq = _paq || [];
+			_paq.push(['setCustomVariable', 1, 'siteLanguage', '{$siteLanguage}', 'page']);
 			_paq.push(['trackPageView']);
 			_paq.push(['enableLinkTracking']);
 			(function() {

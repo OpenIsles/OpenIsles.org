@@ -20,6 +20,9 @@ if (isset($isLocalDevelopment)) {
 	$smarty->assign('isLocalDevelopment', true);
 }
 
+require_once('php/prefilter.translate.php');
+$smarty->registerFilter('pre', 'smarty_prefilter_translate');
+
 // Sprache erkennen
 include_once('php/detect-language.php');
 $siteLanguage = detectLanguage($targetHostName, $acceptedLanguages);

@@ -2,8 +2,8 @@
 
 {block "title"}
 	{capture attr}
-		<translate lang="de">Gebäude – Spielinfos</translate>
-		<translate lang="en">Buildings – Game info</translate>
+		<translate lang="de">Einwohner – Spielinfos</translate>
+		<translate lang="en">Inhabitants – Game info</translate>
 	{/capture}
 	{$smarty.capture.attr|trim}
 {/block}
@@ -16,8 +16,8 @@
 <div class="row">
 	<div class="small-12 columns">
 		<h1>
-			<translate lang="de">Gebäude</translate>
-			<translate lang="en">Buildings</translate>
+			<translate lang="de">Einwohner</translate>
+			<translate lang="en">Inhabitants</translate>
 		</h1>
 		<p>
 			<translate lang="de">

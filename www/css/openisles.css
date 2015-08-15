@@ -64,6 +64,13 @@ body {
 	left: 75px;
 	top: -30px;
 }
+#site-header .show-for-medium-up h2:lang(de) {
+	left: 75px;
+}
+#site-header .show-for-medium-up h2:lang(en) {
+	left: 95px;
+}
+
 #site-header .show-for-small-only h2 {
 	font-size: 1.5rem;
 	text-shadow: 1px 1px 3px #000000;

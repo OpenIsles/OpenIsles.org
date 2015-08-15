@@ -29,9 +29,9 @@ function getStaticPages() {
 			'template' => 'game-infos/buildings.tpl',
 			'navsActive' => array('game-infos', 'game-infos/buildings')
 		),
-		'/game-infos/population.html' => array(
-			'template' => 'game-infos/population.tpl',
-			'navsActive' => array('game-infos', 'game-infos/population')
+		'/game-infos/inhabitants.html' => array(
+			'template' => 'game-infos/inhabitants.tpl',
+			'navsActive' => array('game-infos', 'game-infos/inhabitants')
 		),
 		'/game-infos/ships.html' => array(
 			'template' => 'game-infos/ships.tpl',
