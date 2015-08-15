@@ -91,5 +91,6 @@ else if ($requestUrl == '/sitemap.xml') {
 
 // 404
 else {
+	header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
 	$smarty->display('404.tpl');
 }
