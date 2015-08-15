@@ -1,3 +1,12 @@
+{extends "page-layout.tpl"}
+
+{block "title"}Kontakt &amp; Impressum{/block}
+
+{block "additionalMetaTags"}
+	<meta name="description" value="OpenIsles und diese Webseite sind ein Projekt von theHacker – Alexander Münch" />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Kontakt &amp; Impressum</h1>
@@ -13,3 +22,4 @@
 		</ul>
 	</div>
 </div>
+{/block}

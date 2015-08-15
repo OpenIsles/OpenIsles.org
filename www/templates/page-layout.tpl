@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="{$siteLanguage}">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,17 @@
 		{capture assign=copyright}Copyright © 2015{if $year != '2015'}-{$year}{/if}{/capture}
 		<meta name="copyright" content="{$copyright|escape} Alexander Münch" />
 
-		<meta name="robots" content="index, follow" />
-		<meta name="language" content="de" />
+		{block "additionalMetaTags"}{/block}
 
-		<title>{if isset($title)}{$title|escape} – OpenIsles{else}OpenIsles – das freie Insel-Aufbauspiel{/if}</title>
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="{$siteLanguage}" />
+
+		{capture "title"}{block "title"}{/block}{/capture}
+		<title>
+			{if $smarty.capture.title != ''}{$smarty.capture.title} – OpenIsles
+			{else}OpenIsles – das freie Insel-Aufbauspiel
+			{/if}
+		</title>
 
 		<link rel="stylesheet" href="/css/normalize.css" />
 		<link rel="stylesheet" href="/css/foundation.min.css" />
@@ -102,7 +109,7 @@
 		</div>
 
 		<section id="page-wrapper">
-			{$pageContent}
+			{block "pageContent"}{/block}
 		</section>
 
 		<footer id="site-footer">

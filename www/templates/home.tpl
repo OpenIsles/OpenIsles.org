@@ -1,3 +1,11 @@
+{extends "page-layout.tpl"}
+
+{block "additionalMetaTags"}
+	<meta name="description"
+		  value="Willkommen auf OpenIsles! OpenIsles ist ein freies Insel-Aufbauspiel, was sich maßgeblich an dem Klassiker Anno&nbsp;1602 orientiert." />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Willkommen auf OpenIsles!</h1>
@@ -27,3 +35,4 @@
 		</p>
 	</div>
 </div>
+{/block}

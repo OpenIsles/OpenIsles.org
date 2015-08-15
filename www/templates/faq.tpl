@@ -1,3 +1,13 @@
+{extends "page-layout.tpl"}
+
+{block "title"}FAQ – häufig gestellte Fragen{/block}
+
+{block "additionalMetaTags"}
+	<meta name="description"
+		  value="FAQ – häufig gestellte Fragen: Hey, das kenn ich! Das is doch Anno&nbsp;1602. Ist das Spiel gratis?" />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>FAQ – häufig gestellte Fragen</h1>
@@ -61,3 +71,4 @@
 		</dl>
 	</div>
 </div>
+{/block}

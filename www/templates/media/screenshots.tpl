@@ -1,3 +1,13 @@
+{extends "page-layout.tpl"}
+
+{block "title"}Screenshots{/block}
+
+{block "additionalMetaTags"}
+	<link rel="up" href="/media.html" />
+	<meta name="description" value="Impressionen vom Spiel und der Entwicklung, chronologisch sortiert" />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Screenshots</h1>
@@ -18,3 +28,4 @@
 		</ul>
 	</div>
 </div>
+{/block}

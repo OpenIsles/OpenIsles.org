@@ -1,3 +1,8 @@
+{extends "page-layout.tpl"}
+
+{block "title"}404 Not Found{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>404 Not Found</h1>
@@ -10,3 +15,4 @@
 		</p>
 	</div>
 </div>
+{/block}

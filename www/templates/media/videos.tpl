@@ -1,3 +1,13 @@
+{extends "page-layout.tpl"}
+
+{block "title"}Videos{/block}
+
+{block "additionalMetaTags"}
+	<link rel="up" href="/media.html" />
+	<meta name="description" value="Videos vom Spiel und der Entwicklung, chronologisch sortiert" />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Videos</h1>
@@ -20,3 +30,4 @@
 		</ul>
 	</div>
 </div>
+{/block}

@@ -1,3 +1,13 @@
+{extends "page-layout.tpl"}
+
+{block "title"}Datenschutz{/block}
+
+{block "additionalMetaTags"}
+	<meta name="description"
+		  value="Ein paar Worte zum Datenschutz. OpenIsles.org respektiert den &quot;Do not Track&quot;-Header" />
+{/block}
+
+{block "pageContent"}
 <div class="row">
 	<div class="small-12 columns">
 		<h1>Datenschutz</h1>
@@ -29,3 +39,4 @@
 		</p>
 	</div>
 </div>
+{/block}
