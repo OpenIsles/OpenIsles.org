@@ -34,6 +34,15 @@
 			<li><span class="zip">90547</span> <span class="locality">Stein</span></li>
 			<li class="email"><a href="javascript:return false;">webmaster (at) openisles.org</a></li>
 		</ul>
+
+		<p>
+			<translate lang="de">
+				Flaggen-Icons von <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>. Danke.
+			</translate>
+			<translate lang="en">
+				Flag icons by <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>. Thanks.
+			</translate>
+		</p>
 	</div>
 </div>
 {/block}

@@ -14,6 +14,10 @@
 		<meta name="robots" content="index, follow" />
 		<meta name="language" content="{$siteLanguage}" />
 
+		{foreach $languageMap as $lang => $langName}
+			<link rel="alternate" hreflang="{$lang}" href="{$alternateUrls[$lang]|escape}" />
+		{/foreach}
+
 		{capture "title"}{block "title"}{/block}{/capture}
 		<title>
 			{if $smarty.capture.title != ''}{$smarty.capture.title} – OpenIsles
@@ -144,6 +148,15 @@
 								GitHub
 							</a>
 						</li>
+						<li style="padding-right: 10px;">&nbsp;</li>
+						{foreach $languageMap as $lang => $langName}
+						<li>
+							<a href="{$alternateUrls[$lang]|escape}"
+							   class="button lang{if $lang == $siteLanguage} selected{/if}">
+								<img src="/img/flags/{$lang}.png" alt="{$langName}" title="{$langName}" />
+							</a>
+						</li>
+						{/foreach}
 					</ul>
 				</section>
 			</nav>

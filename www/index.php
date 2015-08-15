@@ -9,7 +9,11 @@ if (preg_match('~openisles.org.localhost$~', $_SERVER['SERVER_NAME'])) {
 	$targetHostName = 'openisles.org';
 }
 
-$acceptedLanguages = array('de', 'en');
+$languageMap = array(
+	'de' => 'Deutsch',
+	'en' => 'English'
+);
+$acceptedLanguages = array_keys($languageMap);
 
 // Smarty initialisieren
 require_once('smarty/libs/Smarty.class.php');
@@ -36,10 +40,16 @@ setlocale(LC_TIME,
 );
 $smarty->compile_id = $siteLanguage;
 $smarty->assign('siteLanguage', $siteLanguage);
+$smarty->assign('languageMap', $languageMap);
 
 header("Content-Type: text/html; charset=UTF-8");
 header("Content-Language: $siteLanguage");
 
+$alternateUrls = array();
+foreach ($acceptedLanguages as $lang) {
+	$alternateUrls[$lang] = "http://$lang.$targetHostName{$_SERVER['REQUEST_URI']}";
+}
+$smarty->assign('alternateUrls', $alternateUrls);
 
 // statische Seiten
 include_once('php/static-pages.php');
