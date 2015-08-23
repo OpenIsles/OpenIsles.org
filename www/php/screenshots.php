@@ -6,6 +6,14 @@
 function getScreenshots() {
 	return array(
 		array(
+			'date' => '2015-08-23 08:59:19',
+			'fileprefix' => 'screenshot_2015-08-23_08-59-19',
+			'description' => array(
+				'de' => 'Infos im Baumenü überarbeitet. Dank der GUI-Komponenten haben wir nun Statusleisten-Text für die Baukosten.',
+				'en' => 'Information in the build menu revised. Thanks to the GUI components we now have statusbar text for the building costs'
+			)
+		),
+		array(
 			'date' => '2015-08-10 22:07:37',
 			'fileprefix' => 'screenshot_2015-08-10_22-07-37',
 			'description' => array(
