@@ -6,6 +6,14 @@
 function getScreenshots() {
 	return array(
 		array(
+			'date' => '2015-09-14 17:36:31',
+			'fileprefix' => 'screenshot_2015-09-14_17-36-31',
+			'description' => array(
+				'de' => 'Steuerelemente zum Drehen und Zoomen der Karte hinzugefügt. Minimap grafisch überarbeitet.',
+				'en' => 'Added controls to rotate and zoom the map. Minimap graphically revised.'
+			)
+		),
+		array(
 			'date' => '2015-08-23 08:59:19',
 			'fileprefix' => 'screenshot_2015-08-23_08-59-19',
 			'description' => array(
