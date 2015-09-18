@@ -1,12 +1,18 @@
 <?php
 
-if (preg_match('~openisles.org.localhost$~', $_SERVER['SERVER_NAME'])) {
-	// Lokale Entwicklung
-	$targetHostName = 'openisles.org.localhost';
-	$isLocalDevelopment = true;
+// Host detektieren
+if (preg_match('~openisles.org(?:\.([^.]+))?$~', $_SERVER['SERVER_NAME'], $match)) {
+	if ($match[1]) {
+		// Lokale Entwicklung
+		$targetHostName = "openisles.org.$match[1]";
+		$isLocalDevelopment = true;
+	} else {
+		// Produktivbetrieb
+		$targetHostName = 'openisles.org';
+		$isLocalDevelopment = false;
+	}
 } else {
-	// Produktivbetrieb
-	$targetHostName = 'openisles.org';
+	die("Illegal Host {$_SERVER['SERVER_NAME']}");
 }
 
 $languageMap = array(
@@ -19,7 +25,7 @@ $acceptedLanguages = array_keys($languageMap);
 require_once('smarty/libs/Smarty.class.php');
 $smarty = new Smarty;
 
-if (isset($isLocalDevelopment)) {
+if ($isLocalDevelopment) {
 	$smarty->setForceCompile(true); // Smarty zum Re-Compile der Templates zwingen, damit wir sofort F5 machen können.
 	$smarty->assign('isLocalDevelopment', true);
 }

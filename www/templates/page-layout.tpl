@@ -50,6 +50,11 @@
 					<translate lang="en">the free island-building game</translate>
 				</h2>
 			</div>
+			{if isset($isLocalDevelopment)}
+				<div class="row text-center" style="color: red; font-size: 30px; font-weight: bold;">
+					– localDevelopment-Flag gesetzt –
+				</div>
+			{/if}
 		</header>
 
 		<div class="contain-to-grid sticky">
