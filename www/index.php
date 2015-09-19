@@ -124,6 +124,10 @@ else if ($requestUrl == '/sitemap.xml') {
 	header("Content-Type: text/xml; charset=UTF-8");
 
 	$smarty->assign('targetHostName', $targetHostName);
+
+	include_once('php/screenshots.php');
+	$smarty->assign('screenshots', getScreenshots());
+
 	$smarty->display('sitemap.xml.tpl');
 }
 
