@@ -138,13 +138,13 @@
 					</ul>
 
 					<ul class="right">
-						<li>
+						{*<li>
 							<a href="https://github.com/OpenIsles/OpenIsles/archive/master.zip"
 							   class="alert button" target="_blank" rel="nofollow">
 								<strong>Download</strong>
 							</a>
 						</li>
-						<li>&nbsp;</li>
+						<li>&nbsp;</li>*}
 						<li>
 							<a href="https://github.com/OpenIsles/" class="success button"
 							   target="_blank" rel="nofollow">
