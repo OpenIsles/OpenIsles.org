@@ -123,6 +123,7 @@ else if ($requestUrl == '/media/videos.html') {
 else if ($requestUrl == '/sitemap.xml') {
 	header("Content-Type: text/xml; charset=UTF-8");
 
+	$smarty->assign('targetHostName', $targetHostName);
 	$smarty->display('sitemap.xml.tpl');
 }
 
