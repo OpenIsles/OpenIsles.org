@@ -39,21 +39,16 @@
 			</p>
 		</translate>
 
-		<ul class="clearing-thumbs large-block-grid-4" data-clearing>
+		<ul class="large-block-grid-4">
 			{foreach $screenshots as $screenshot}
-				<li>
-					<a href="/media/screenshots/{$screenshot.fileprefix}.png">
-						{capture attr}
-							<translate lang="de">
-								<span class='media-date'>{$screenshot.date|date_format:"%e. %B %Y, %T"} Uhr</span><br />{$screenshot.description.de|escape}
-							</translate>
-							<translate lang="en">
-								<span class='media-date'>{$screenshot.date|date_format:"%e. %B %Y, %T"}</span><br />{$screenshot.description.en|escape}
-							</translate>
-						{/capture}
-						<img src="/media/screenshots/{$screenshot.fileprefix}.thumb.png"
-							 data-caption="{$smarty.capture.attr|trim}" />
+				<li class="text-center">
+					<a href="/media/screenshots/{$screenshot.url_name}.html">
+						<img src="/media/screenshots/thumbnails/{$screenshot.url_name}.thumb.png"
+							 title="{$screenshot.title|escape}"
+							 alt="{$screenshot.description|escape}" />
 					</a>
+					<br />
+					<span class="media-date">{$screenshot.created_date|date_format:"%e. %B %Y"}</span>
 				</li>
 			{/foreach}
 		</ul>

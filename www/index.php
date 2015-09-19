@@ -1,5 +1,7 @@
 <?php
 
+require_once('php/config/config.php');
+
 // Host detektieren
 if (preg_match('~openisles.org(?:\.([^.]+))?$~', $_SERVER['SERVER_NAME'], $match)) {
 	if ($match[1]) {
@@ -20,6 +22,18 @@ $languageMap = array(
 	'en' => 'English'
 );
 $acceptedLanguages = array_keys($languageMap);
+
+// Datenbankverbindung aufbauen
+$DB = new mysqli(
+	$_CONFIG['database']['host'],
+	$_CONFIG['database']['username'],
+	$_CONFIG['database']['passwd'],
+	$_CONFIG['database']['dbname']
+);
+if ($DB->connect_error) {
+	die("Could not connect to database: {$DB->connect_errno} {$DB->connect_error}");
+}
+$DB->query('SET NAMES utf8;');
 
 // Smarty initialisieren
 require_once('smarty/libs/Smarty.class.php');
@@ -70,13 +84,30 @@ if (isset($staticPages[$requestUrl])) {
 	$smarty->display($staticPages[$requestUrl]['template']);
 }
 
-// Screenshots
+// Screenshots: Übersicht
 else if ($requestUrl == '/media/screenshots.html') {
 	include_once('php/screenshots.php');
 	$smarty->assign('screenshots', getScreenshots());
 
 	$smarty->assign('navsActive', array('media' => true, 'media/screenshots' => true));
 	$smarty->display('media/screenshots.tpl');
+}
+
+// Screenshots: Einzelansicht
+else if (preg_match('~^/media/screenshots/([^/]+)\.html$~', $requestUrl, $match)) {
+	include_once('php/screenshots.php');
+	$screenshot = getScreenshot($match[1]);
+
+	if (!$screenshot) {
+		header($_SERVER['SERVER_PROTOCOL'].' 404 Not Found');
+		$smarty->display('404.tpl');
+		exit;
+	}
+
+	$smarty->assign('screenshot', $screenshot);
+
+	$smarty->assign('navsActive', array('media' => true, 'media/screenshots' => true));
+	$smarty->display('media/screenshot.tpl');
 }
 
 // Videos
