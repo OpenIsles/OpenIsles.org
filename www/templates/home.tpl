@@ -26,7 +26,7 @@
 		<translate lang="en">
 			<h1>Welcome to OpenIsles!</h1>
 			<p>
-				With a small ship and a little building material you find yourself in a idyllic island world.
+				With a small ship and a little building material you find yourself in an idyllic island world.
 				Now it's islands to explore, build settlements and supply its inhabitants with goods and public
 				buildings.
 			</p>
