@@ -213,6 +213,23 @@ a:hover, a:focus,
 	font-size: 0.75em;
 }
 
+/* Cookie-Warnung */
+
+#cookie-warning {
+	border: 10px solid red;
+	padding: 20px 30px;
+	background: rgba(228, 228, 228, .85);
+	color: #000000;
+}
+#cookie-warning h1 {
+	margin-top: 0;
+	color: #7f0000;
+}
+
+.ui-effects-transfer-cookie-warning {
+	border: 2px dotted #7f0000;
+	z-index: 1006; /* z-index von Foundation übertrumpfen (= 1005 + 1) */
+}
 
 /* Impressum */
 

@@ -146,6 +146,19 @@
 						</li>
 						<li>&nbsp;</li>*}
 						<li>
+							<a href="/privacy.html" id="cookie-warning-button">
+								<translate lang="de">
+									<img src="/img/cookie.svg" style="width: 24px; height: 24px;" alt="Cookie-Warnung!"
+										 title="Diese Seite verwendet Cookies. Klick hier für mehr Infos." />
+								</translate>
+								<translate lang="en">
+									<img src="/img/cookie.svg" style="width: 24px; height: 24px;" alt="Cookie warning!"
+										 title="This website uses cookies. Click here for more information." />
+								</translate>
+							</a>
+						</li>
+						<li>&nbsp;</li>
+						<li>
 							<a href="https://github.com/OpenIsles/" class="success button"
 							   target="_blank" rel="nofollow">
 								<img src="/img/github-white.png" alt="GitHub"
@@ -206,6 +219,7 @@
 		<script src="/js/vendor/fastclick.js"></script>
 
 		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.reveal.js"></script>
 		<script src="/js/foundation/foundation.topbar.js"></script>
 
 		{capture backText}
@@ -219,6 +233,64 @@
 				}
 			});
 		</script>
+
+		<script src="/js/jquery-ui.min.js"></script>
+
+		<div id="cookie-warning" class="reveal-modal" data-reveal>
+			<div class="row">
+				<div class="small-12 medium-4 columns">
+					<img src="/img/cookie.svg" alt="" style="width: 256px; height: 256px; float: left;" />
+				</div>
+				<div class="small-12 medium-8 columns">
+					<a class="close-reveal-modal">&#215;</a>
+
+					<translate lang="de">
+						<h1>Cookie-Warnung</h1>
+						<p>
+							Sorry für die Störung :-(<br />
+							Dank eines neuen idiotischen Gesetzes muss jede Webseite ihre Besucher über die
+							Verwendung einer Technologie aufklären, die seit nunmehr über 20 Jahren im Einsatz ist:
+							<b>Cookies</b>
+						</p>
+						<p>
+							Wie jede Webseite, verwendet auch OpenIsles.org Cookies. Im Gegensatz zu anderen
+							Seiten verwenden wir diese aber nur zu statistischen Zwecken. Hier gibt es keine
+							versteckten Facebook- oder Google-Scripts, die Daten sammeln und dich quer durch
+							das Internet verfolgen! :-)
+						</p>
+						<p>
+							Sofern du den lokalen Web-Storage deines Browsers nicht blockierst, wird dir diese
+							Meldung nur einmalig gezeigt.
+						</p>
+						<p>
+							<a href="/privacy.html">Klick hier für weitere Informationen zum Datenschutz.</a>
+						</p>
+					</translate>
+					<translate lang="en">
+						<h1>Cookie warning</h1>
+						<p>
+							Sorry for the disturbance :-(<br />
+							Thanks to a new idiotic law every website must enlighten its visitors about the usage
+							of a technology which is in use for more than 20 years:
+							<b>Cookies</b>
+						</p>
+						<p>
+							Like every website OpenIsles.org uses cookies, too. In contrast to other websites
+							we only use these for statistical purposes. Here are no hidden scripts from Facebook
+							or Google, collecting data and chasing you across the internet! :-)
+						</p>
+						<p>
+							Provided you do not block your browser's local storage this message will be shown
+							to you only once.
+						</p>
+						<p>
+							<a href="/privacy.html">Click here for more information about privacy.</a>
+						</p>
+					</translate>
+				</div>
+			</div>
+		</div>
+		<script src="/js/cookie-warning.js"></script>
 
 		{$piwikIdSite=(isset($isLocalDevelopment)) ? 3 : 1}
 		<script type="text/javascript">

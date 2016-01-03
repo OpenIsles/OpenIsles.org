@@ -38,6 +38,10 @@
 				widersprechen möchtest, so aktiviere einfach die entsprechende Einstellung in deinem Browser.
 			</p>
 			<p>
+				Um dir nicht bei jedem Besuch die Cookie-Warnung anzuzeigen, sondern nur einmalig, wird der lokale
+				Web-Storage deines Browser benutzt, um sich zu merken, dass du den Hinweis bereits gesehen hast.
+			</p>
+			<p>
 				Für weitere Statistiken verwendet OpenIsles.org die Logdateien des Webservers, in welchen alle Zugriffe
 				auf die Webseite protokolliert werden. Hierin enthalten sind wer (IP-Adresse) wann (Datum und Uhrzeit)
 				was (angefragte URL) aufgerufen hat, sowie der Useragent- und Referrer-Header, so sie dein Browser
@@ -65,6 +69,10 @@
 				<a href="https://de.wikipedia.org/wiki/Do_Not_Track_(Software)">"Do not Track" header</a>!
 				If you want to disagree on evaluating and storing of this statistic data according to
 				§&nbsp;15 Abs.&nbsp;3 TMG, simply activate the corresponding setting in your web browser.
+			</p>
+			<p>
+				So as not to show you the cookie warning on every visit, but once only, your browser's local
+				storage is used to remember that you already have seen the hint.
 			</p>
 			<p>
 				For further statistics OpenIsles.org uses the webserver's log files in which all requests to the
