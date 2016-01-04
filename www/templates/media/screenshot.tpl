@@ -69,12 +69,7 @@
 			<br />
 
 			<span class='media-date'>
-				<translate lang="de">
-					{$screenshot.created_date|date_format:"%e. %B %Y, %T"} Uhr
-				</translate>
-				<translate lang="en">
-					{$screenshot.created_date|date_format:"%e. %B %Y, %T"}
-				</translate>
+				{$screenshot.created_date|date_format:"%e. %B %Y"}
 			</span>
 		</p>
 	</div>

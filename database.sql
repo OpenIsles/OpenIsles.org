@@ -13,6 +13,54 @@ CREATE TABLE screenshot (
 
 INSERT INTO screenshot (order_index, url_name, title_de, description_de, title_en, description_en, created_date) VALUES
 (
+    34,
+    '2016-01-03-demanded-goods',
+    'Infopanel: verlangte Güter',
+    'Das Infopanel zeigt nun schon mal die verlangten Güter an. Verbrauchslogik ist noch keine da.',
+    'Info panel: Demanded goods',
+    'The info panel meanwhile shows the demanded goods. There is no logic for consuming yet.',
+    '2016-01-03 02:45:11'
+), (
+    33,
+    '2015-12-28-i18n-poedit',
+    'Internationisierung: Poedit mit deutscher Übersetzungsdatei',
+    'Hier ist die deutsche Sprachdatei im Übersetzungseditor zu sehen.',
+    'Internationalization: Poedit with German translation file',
+    'Here you can see the German translation file in the translation editor.',
+    '2015-12-28 19:54:12'
+), (
+    32,
+    '2015-12-28-i18n-english',
+    'Internationisierung: Das Spiel auf Englisch',
+    'Alle Phrasen im Spiel sind nun übersetzbar. Der Screenshot zeigt OpenIsles auf Englisch.',
+    'Internationalization: The game in English',
+    'All phrases in the game are now translatable. The screenshot shows OpenIsles in English.',
+    '2015-12-28 19:50:42'
+), (
+    31,
+    '2015-11-28-infopanel-player',
+    'Infopanel: Spielerstatus',
+    'Das Dummy-Widget wurde durch den Spielerstatus ersetzt, die Infos über Gesamtbevölkerung und Finanzen anzeigt.',
+    'Info panel: Player\'s status',
+    'The dummy widget was replaced by the player\'s status showing information about total population and finances.',
+    '2015-11-28 12:24:52'
+), (
+    30,
+    '2015-11-28-infopanel-public-building',
+    'Infopanel: ausgewähltes öffentliches Gebäude',
+    'Das Infopanel für öffentliche Gebäude ist komplett fertig.',
+    'Info panel: selected public building',
+    'The info panel for public buildings is now complete.',
+    '2015-11-28 12:18:32'
+), (
+    29,
+    '2015-11-28-infopanel-house',
+    'Infopanel: ausgewähltes Haus',
+    'Ist ein Haus ausgewählt, so zeigt das Infopanel Informationen über Einwohneranzahl und Bevölkerungsgruppe.',
+    'Info panel: selected house',
+    'When a house is selected the info panel shows information about population and population tier.',
+    '2015-11-28 12:18:14'
+), (
     28,
     '2015-09-14-gui-map-controls-graphically-revised',
     'Steuerelemente zum Drehen und Zoomen der Karte',
