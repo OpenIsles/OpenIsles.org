@@ -66,7 +66,7 @@
 				<br />
 
 				OpenIsles.org respects the
-				<a href="https://de.wikipedia.org/wiki/Do_Not_Track_(Software)">"Do not Track" header</a>!
+				<a href="https://en.wikipedia.org/wiki/Do_Not_Track">"Do not Track" header</a>!
 				If you want to disagree on evaluating and storing of this statistic data according to
 				§&nbsp;15 Abs.&nbsp;3 TMG, simply activate the corresponding setting in your web browser.
 			</p>
