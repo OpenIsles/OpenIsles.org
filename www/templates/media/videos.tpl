@@ -40,7 +40,7 @@
 			{foreach $videos as $video}
 				<li>
 					<div class="flex-video">
-						<video src="/media/videos/{$video.fileprefix}.ogv" controls></video>
+						<video src="//{$staticHostName}/media/videos/{$video.fileprefix}.ogv" controls></video>
 					</div>
 					<p>
 						<span class='media-date'>{$video.date|date_format:"%e. %B %Y"}:</span>

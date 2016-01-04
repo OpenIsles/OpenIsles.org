@@ -18,8 +18,8 @@ function getScreenshots() {
 	// Thumbnails erzeugen, wenn nicht vorhanden
 	foreach ($screenshots as $screenshot) {
 		$urlName = $screenshot['url_name'];
-		$imageFile = "{$_SERVER['DOCUMENT_ROOT']}/media/screenshots/$urlName.png";
-		$thumbnailFile = "{$_SERVER['DOCUMENT_ROOT']}/media/screenshots/thumbnails/$urlName.thumb.png";
+		$imageFile = "{$_SERVER['DOCUMENT_ROOT']}/static/media/screenshots/$urlName.png";
+		$thumbnailFile = "{$_SERVER['DOCUMENT_ROOT']}/static/media/screenshots/thumbnails/$urlName.thumb.png";
 
 		if (!file_exists($thumbnailFile)) {
 			exec("convert -geometry 200x $imageFile $thumbnailFile");

@@ -6,7 +6,7 @@ OpenIsles.org.iml
 templates_c/
 
 # Erzeugte Thumbnails
-www/media/screenshots/thumbnails/
+www/static/media/screenshots/thumbnails/
 
 # Konkrete Version der Konfigurationsdatei.
 # Unter src/config-template.php ist eine Beispieldatei zu finden.

@@ -43,7 +43,7 @@
 			{foreach $screenshots as $screenshot}
 				<li class="text-center" data-equalizer-watch>
 					<a href="/media/screenshots/{$screenshot.url_name}.html">
-						<img src="/media/screenshots/thumbnails/{$screenshot.url_name}.thumb.png"
+						<img src="//{$staticHostName}/media/screenshots/thumbnails/{$screenshot.url_name}.thumb.png"
 							 title="{$screenshot.title|escape}"
 							 alt="{$screenshot.description|escape}" />
 					</a>

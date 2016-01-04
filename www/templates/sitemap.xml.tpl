@@ -21,7 +21,7 @@
         <url>
             <loc>http://{$siteLanguage}.{$targetHostName}/media/screenshots/{$screenshot.url_name}.html</loc>
             <image:image>
-                <image:loc>http://{$siteLanguage}.{$targetHostName}/media/screenshots/{$screenshot.url_name}.png</image:loc>
+                <image:loc>http://{$staticHostName}/media/screenshots/{$screenshot.url_name}.png</image:loc>
                 <image:caption>{$screenshot.title|escape}</image:caption>
             </image:image>
         </url>

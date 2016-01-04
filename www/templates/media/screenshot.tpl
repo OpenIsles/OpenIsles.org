@@ -53,13 +53,13 @@
 
 		<p class="text-center">
 			<a href="/media/screenshots/{$screenshot.next.url_name}.html">
-				<img src="/media/screenshots/{$screenshot.url_name}.png"
+				<img src="//{$staticHostName}/media/screenshots/{$screenshot.url_name}.png"
 					 title="{$screenshot.title|escape}"
 					 alt="{$screenshot.description|escape}" />
 			</a>
 
 			<br />
-			<a href="/media/screenshots/{$screenshot.url_name}.png" target="_blank">
+			<a href="//{$staticHostName}/media/screenshots/{$screenshot.url_name}.png" target="_blank">
 				<translate lang="de">(Bild im neuen Tab öffnen)</translate>
 				<translate lang="en">(Open picture in new tab)</translate>
 			</a>

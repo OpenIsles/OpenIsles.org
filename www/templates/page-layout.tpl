@@ -27,11 +27,11 @@
 			{/if}
 		</title>
 
-		<link rel="stylesheet" href="/css/normalize.css" />
-		<link rel="stylesheet" href="/css/foundation.min.css" />
-		<link rel="stylesheet" href="/css/openisles.css" />
+		<link rel="stylesheet" href="//{$staticHostName}/css/normalize.css" />
+		<link rel="stylesheet" href="//{$staticHostName}/css/foundation.min.css" />
+		<link rel="stylesheet" href="//{$staticHostName}/css/openisles.css" />
 
-		<script src="/js/vendor/modernizr.js"></script>
+		<script src="//{$staticHostName}/js/vendor/modernizr.js"></script>
 	</head>
 
 	<body>
@@ -148,11 +148,13 @@
 						<li>
 							<a href="/privacy.html" id="cookie-warning-button">
 								<translate lang="de">
-									<img src="/img/cookie.svg" style="width: 24px; height: 24px;" alt="Cookie-Warnung!"
+									<img src="//{$staticHostName}/img/cookie.svg"
+										 style="width: 24px; height: 24px;" alt="Cookie-Warnung!"
 										 title="Diese Seite verwendet Cookies. Klick hier für mehr Infos." />
 								</translate>
 								<translate lang="en">
-									<img src="/img/cookie.svg" style="width: 24px; height: 24px;" alt="Cookie warning!"
+									<img src="//{$staticHostName}/img/cookie.svg"
+										 style="width: 24px; height: 24px;" alt="Cookie warning!"
 										 title="This website uses cookies. Click here for more information." />
 								</translate>
 							</a>
@@ -161,7 +163,7 @@
 						<li>
 							<a href="https://github.com/OpenIsles/" class="success button"
 							   target="_blank" rel="nofollow">
-								<img src="/img/github-white.png" alt="GitHub"
+								<img src="//{$staticHostName}/img/github-white.png" alt="GitHub"
 									 style="vertical-align: baseline; width: 12px; height: 12px;"/>
 								GitHub
 							</a>
@@ -171,7 +173,8 @@
 						<li>
 							<a href="{$alternateUrls[$lang]|escape}"
 							   class="button lang{if $lang == $siteLanguage} selected{/if}">
-								<img src="/img/flags/{$lang}.png" alt="{$langName}" title="{$langName}" />
+								<img src="//{$staticHostName}/img/flags/{$lang}.png"
+									 alt="{$langName}" title="{$langName}" />
 							</a>
 						</li>
 						{/foreach}
@@ -207,7 +210,8 @@
 				<div class="small-12 text-right medium-4 columns small-only-text-center">
 					<br class="show-for-small-only" />
 					<a href="http://www.w3.org/html/logo/" target="_blank" rel="nofollow" class="noLinkBackground">
-						<img src="/img/html5-badge-h-css3-multimedia-semantics-storage.png" width="197" height="64"
+						<img src="//{$staticHostName}/img/html5-badge-h-css3-multimedia-semantics-storage.png"
+							 width="197" height="64"
 							 alt="HTML5 Powered with CSS3 / Styling, Multimedia, Semantics, and Offline &amp; Storage"
 							 title="HTML5 Powered with CSS3 / Styling, Multimedia, Semantics, and Offline &amp; Storage" />
 					</a>
@@ -215,13 +219,13 @@
 			</div>
 		</footer>
 
-		<script src="/js/vendor/jquery.js"></script>
-		<script src="/js/vendor/fastclick.js"></script>
+		<script src="//{$staticHostName}/js/vendor/jquery.js"></script>
+		<script src="//{$staticHostName}/js/vendor/fastclick.js"></script>
 
-		<script src="/js/foundation/foundation.js"></script>
-		<script src="/js/foundation/foundation.equalizer.js"></script>
-		<script src="/js/foundation/foundation.reveal.js"></script>
-		<script src="/js/foundation/foundation.topbar.js"></script>
+		<script src="//{$staticHostName}/js/foundation/foundation.js"></script>
+		<script src="//{$staticHostName}/js/foundation/foundation.equalizer.js"></script>
+		<script src="//{$staticHostName}/js/foundation/foundation.reveal.js"></script>
+		<script src="//{$staticHostName}/js/foundation/foundation.topbar.js"></script>
 
 		{capture backText}
 			<translate lang="de">zurück</translate>
@@ -238,12 +242,12 @@
 			});
 		</script>
 
-		<script src="/js/jquery-ui.min.js"></script>
+		<script src="//{$staticHostName}/js/jquery-ui.min.js"></script>
 
 		<div id="cookie-warning" class="reveal-modal" data-reveal>
 			<div class="row">
 				<div class="small-12 medium-4 columns">
-					<img src="/img/cookie.svg" alt="" style="width: 256px; height: 256px; float: left;" />
+					<img src="//{$staticHostName}/img/cookie.svg" alt="" style="width: 256px; height: 256px; float: left;" />
 				</div>
 				<div class="small-12 medium-8 columns">
 					<a class="close-reveal-modal">&#215;</a>
@@ -294,7 +298,7 @@
 				</div>
 			</div>
 		</div>
-		<script src="/js/cookie-warning.js"></script>
+		<script src="//{$staticHostName}/js/cookie-warning.js"></script>
 
 		{$piwikIdSite=(isset($isLocalDevelopment)) ? 3 : 1}
 		<script type="text/javascript">

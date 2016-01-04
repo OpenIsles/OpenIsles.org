@@ -17,6 +17,8 @@ if (preg_match('~openisles.org(?:\.([^.]+))?$~', $_SERVER['SERVER_NAME'], $match
 	die("Illegal Host {$_SERVER['SERVER_NAME']}");
 }
 
+$staticHostName = "static.${targetHostName}";
+
 $languageMap = array(
 	'de' => 'Deutsch',
 	'en' => 'English'
@@ -61,6 +63,9 @@ setlocale(LC_TIME,
 $smarty->compile_id = $siteLanguage;
 $smarty->assign('siteLanguage', $siteLanguage);
 $smarty->assign('languageMap', $languageMap);
+
+$smarty->assign('targetHostName', $targetHostName);
+$smarty->assign('staticHostName', $staticHostName);
 
 header("Content-Type: text/html; charset=UTF-8");
 header("Content-Language: $siteLanguage");
@@ -122,8 +127,6 @@ else if ($requestUrl == '/media/videos.html') {
 // XML-Sitemap
 else if ($requestUrl == '/sitemap.xml') {
 	header("Content-Type: text/xml; charset=UTF-8");
-
-	$smarty->assign('targetHostName', $targetHostName);
 
 	include_once('php/screenshots.php');
 	$smarty->assign('screenshots', getScreenshots());
