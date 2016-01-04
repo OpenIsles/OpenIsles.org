@@ -90,9 +90,18 @@
 					<li>GCC</li>
 					<li>CMake (2.8.12+)</li>
 					<li>
+						<translate lang="de">
+							PHP (für das Script, dass die Übersetzungsdateien generiert)
+						</translate>
+						<translate lang="en">
+							PHP (for the script generating the translation files)
+						</translate>
+					</li>
+					<li>
 						<translate lang="de">sowie die benötigen Libraries</translate>
 						<translate lang="en">as well as the necessary libraries</translate>
 						<ul>
+							<li>gettext</li>
 							<li>libSDL2</li>
 							<li>libSDL2-image</li>
 							<li>libSDL2-mixer</li>
