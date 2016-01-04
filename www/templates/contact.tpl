@@ -37,10 +37,14 @@
 
 		<p>
 			<translate lang="de">
-				Flaggen-Icons von <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>. Danke.
+				Flaggen-Icons von <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>.<br />
+				HTML5-Logo von <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>.<br />
+				Danke.
 			</translate>
 			<translate lang="en">
-				Flag icons by <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>. Thanks.
+				Flag icons by <a href="http://www.famfamfam.com/lab/icons/flags/">famfamfam.com</a>.<br />
+				HTML5 logo by <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a>.<br />
+				Thanks.
 			</translate>
 		</p>
 	</div>

@@ -29,6 +29,12 @@ a.noLinkBackground:hover, a.noLinkBackground:focus {
 	background: none;
 }
 
+abbr, acronym {
+	font-size: 100%;
+	text-transform: none;
+	color: inherit;
+}
+
 
 /* Body */
 

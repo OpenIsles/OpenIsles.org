@@ -207,9 +207,9 @@
 				<div class="small-12 text-right medium-4 columns small-only-text-center">
 					<br class="show-for-small-only" />
 					<a href="http://www.w3.org/html/logo/" target="_blank" rel="nofollow" class="noLinkBackground">
-						<img src="/img/html5-badge-h-css3-multimedia-semantics.png" width="197" height="64"
-							 alt="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics"
-							 title="HTML5 Powered with CSS3 / Styling, Multimedia, and Semantics" />
+						<img src="/img/html5-badge-h-css3-multimedia-semantics-storage.png" width="197" height="64"
+							 alt="HTML5 Powered with CSS3 / Styling, Multimedia, Semantics, and Offline &amp; Storage"
+							 title="HTML5 Powered with CSS3 / Styling, Multimedia, Semantics, and Offline &amp; Storage" />
 					</a>
 				</div>
 			</div>
