@@ -39,9 +39,9 @@
 			</p>
 		</translate>
 
-		<ul class="large-block-grid-4">
+		<ul class="large-block-grid-4" data-equalizer>
 			{foreach $screenshots as $screenshot}
-				<li class="text-center">
+				<li class="text-center" data-equalizer-watch>
 					<a href="/media/screenshots/{$screenshot.url_name}.html">
 						<img src="/media/screenshots/thumbnails/{$screenshot.url_name}.thumb.png"
 							 title="{$screenshot.title|escape}"

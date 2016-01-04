@@ -219,6 +219,7 @@
 		<script src="/js/vendor/fastclick.js"></script>
 
 		<script src="/js/foundation/foundation.js"></script>
+		<script src="/js/foundation/foundation.equalizer.js"></script>
 		<script src="/js/foundation/foundation.reveal.js"></script>
 		<script src="/js/foundation/foundation.topbar.js"></script>
 
@@ -228,6 +229,9 @@
 		{/capture}
 		<script>
 			$(document).foundation({
+				equalizer: {
+					equalize_on_stack: true
+				},
 				topbar: {
 					back_text: '{$smarty.capture.backText|trim}'
 				}
