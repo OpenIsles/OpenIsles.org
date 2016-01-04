@@ -34,7 +34,7 @@
 		<script src="//{$staticHostName}/js/vendor/modernizr.js"></script>
 	</head>
 
-	<body>
+	<body {if $isSearchCrawler}class="no-cookie-warning"{/if}>
 		<header id="site-header">
 			<div class="row text-center show-for-medium-up">
 				<h1><span class="open">Open</span><span class="isles">Isles</span></h1>

@@ -71,6 +71,11 @@ $(function() {
 		return false;
 	});
 
+	// Grundsätzlich die Warnung nicht anzeigen? (Google&Co sollen sie niemals sehen!)
+	if ($('body').hasClass('no-cookie-warning')) {
+		return;
+	}
+
 	// Automatisches Öffnen des Popups beim ersten Besuch
 	var hasSeenCookieWarning;
 

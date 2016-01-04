@@ -76,6 +76,34 @@ foreach ($acceptedLanguages as $lang) {
 }
 $smarty->assign('alternateUrls', $alternateUrls);
 
+// Suchmaschine?
+$knownSearchCrawlers = array(
+	"Googlebot",                 // Google
+	"Mediapartners-Google",
+	"AdsBot-Google",
+	"Yahoo! Slurp",              // Yahoo
+	"ia_archiver",               // Alexa
+	"msnbot",                    // Bing/MSN
+	"bingbot",
+	"Baiduspider"                // Baidu
+);
+
+$userAgent = (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '';
+$isSearchCrawler = false;
+foreach ($knownSearchCrawlers as $knownSearchCrawler) {
+	if (stripos($userAgent, $knownSearchCrawler) !== false) {
+		$isSearchCrawler = true;
+		break;
+	}
+}
+
+$smarty->assign('isSearchCrawler', $isSearchCrawler);
+
+
+/////////////////////////////////////////////
+///////////////////////////////////////////// eigentlicher Content /////////////////////////////////////////////
+                                                                   /////////////////////////////////////////////
+
 // statische Seiten
 include_once('php/static-pages.php');
 $staticPages = getStaticPages();
