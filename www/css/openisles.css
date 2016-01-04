@@ -67,6 +67,7 @@ body {
 	text-shadow: 2px 2px 5px #000000;
 
 	position: relative;
+	display: inline-block;
 	left: 75px;
 	top: -30px;
 }
