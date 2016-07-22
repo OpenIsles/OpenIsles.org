@@ -2,12 +2,8 @@
 .idea
 OpenIsles.org.iml
 
-# Smarty: kompilierte Templates
-templates_c/
-
 # Erzeugte Thumbnails
-www/static/media/screenshots/thumbnails/
+src/main/resources/public/media/screenshots/thumbnails/
 
-# Konkrete Version der Konfigurationsdatei.
-# Unter src/config-template.php ist eine Beispieldatei zu finden.
-www/php/config/config.php
+# Maven-Zielverzeichnis
+target/

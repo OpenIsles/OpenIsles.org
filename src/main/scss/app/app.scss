@@ -1,0 +1,254 @@
+
+// Bootstrap ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$body-bg: #001283;
+$body-color: #ffffff;
+
+$link-color: hsl(235, 100%, 50%);
+$link-decoration: none;
+$link-hover-color: darken($link-color, 20%);
+$link-hover-decoration: none;
+
+$font-family-sans-serif: 'Droid Sans', Helvetica, Roboto, Arial, sans-serif;
+$font-family-monospace: 'Droid Sans Mono', 'Liberation Mono', Consolas, Courier, monospace;
+
+$enable-flex: true;
+$enable-rounded: false;
+$enable-transitions: true;
+
+$navbar-padding-vertical: 1px; // Navigationsleiste in der Höhe verkleinern
+
+$hr-border-color: $body-color;
+$hr-border-width: 1px;
+
+$font-size-lg: 1.5rem; // navbar-brand etwas größer machen
+$line-height: 1.6;
+
+$container-max-widths: (
+    sm: 576px,
+    md: 720px,
+    lg: 940px,
+    xl: 1000px // Hintergrund ist für 1000px-Breite optimiert
+);
+
+@import "../bootstrap/bootstrap";
+
+// Eigenes CSS /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+$navbar-color: hsl(235, 75%, 40%);
+
+// Body
+body {
+    background: url(/img/background-body.png) 50% 0 repeat;
+}
+
+// Header
+#site-header {
+    height: 300px;
+    background: url(/img/background-header.png) 50% 0 repeat-x; // 50% für alte Androids; die können calc() nicht
+    background-position: calc(50% - 500px);
+
+    h1 {
+        padding-top: 1rem;
+    }
+    .hidden-sm-down h1 {
+        font-size: 7rem;
+    }
+    .hidden-md-up h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        color: $body-color;
+    }
+    .hidden-sm-down h2 {
+        font-size: 2.25rem;
+        text-shadow: 2px 2px 5px #000000;
+
+        position: relative;
+        display: inline-block;
+        top: -10px;
+
+        &:lang(de) {
+            left: 75px;
+        }
+        &:lang(en) {
+            left: 95px;
+        }
+    }
+    .hidden-md-up h2 {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 3px #000000;
+    }
+
+    $open-color: $navbar-color;
+    $isles-color: hsl(115, 55%, 45%);
+    $open-shadow-color: hsla(hue($open-color), 10%, 90%, .15);
+    $isles-shadow-color: hsla(hue($isles-color), 10%, 90%, .15);
+    .open {
+        color: $open-color;
+        text-shadow:
+            -10px -10px 20px $open-shadow-color,
+            10px -10px 20px $open-shadow-color,
+            10px 10px 20px $open-shadow-color,
+            -10px 10px 20px $open-shadow-color,
+            5px 5px darken($open-color, 20%),
+            -2px -2px lighten($open-color, 20%);
+    }
+
+    .isles {
+        color: $isles-color;
+        font-weight: bold;
+        text-shadow:
+            -10px -10px 20px $isles-shadow-color,
+            10px -10px 20px $isles-shadow-color,
+            10px 10px 20px $isles-shadow-color,
+            -10px 10px 20px $isles-shadow-color,
+            5px 5px darken($isles-color, 20%),
+            -2px -2px lighten($isles-color, 20%);
+    }
+}
+
+// Navigationsleiste
+
+nav.navbar {
+    background-color: $navbar-color;
+
+    // Abstand Branding zu den Navigationspunkten erhöhen (Bootstrap-Default = 1rem)
+    .navbar-brand {
+        margin-right: 2rem;
+    }
+}
+
+.navbar-nav {
+    // Dropdown-Items bündig zum Oberpunkt setzen
+    .nav-item + .nav-item,
+    .nav-link + .nav-link {
+        padding-left: 20px; // 20px kommen aus .dropdown-item (_dropdown.scss)
+    }
+
+    // Dropdowns in der Navigationsleiste
+    // (von Bootstrap v4 noch nicht vollständig unterstützt -> kein Styling out-of-the-box)
+    .dropdown-menu {
+        background-color: $navbar-color;
+
+        .dropdown-item {
+            color: $navbar-dark-color;
+
+            @include hover-focus {
+                background-color: darken($navbar-color, 10%);
+                color: $navbar-dark-hover-color;
+            }
+        }
+
+        .open > .dropdown-item,
+        .active > .dropdown-item,
+        .dropdown-item.open,
+        .dropdown-item.active {
+            @include plain-hover-focus {
+                color: $navbar-dark-active-color;
+            }
+        }
+
+        // Bootstrap's Minimalbreite für Dropdown deaktivieren
+        min-width: 0;
+
+        // Dropdowns oben an der Leiste direkt ohne Abstand andocken
+        margin-top: 0;
+        border-top: none;
+
+        // Unten das Padding weg, damit das Dropdown direkt mit dem letzten Menüpunkt endet
+        padding-bottom: 0;
+    }
+}
+
+// Sprach-Buttons
+
+.btn.lang {
+    background-color: $navbar-color;
+    padding: 0 0.25rem;
+
+    &:hover {
+        background-color: lighten($navbar-color, 20%);
+    }
+    &.selected {
+        background-color: saturate(lighten($navbar-color, 20%), 10%);
+    }
+}
+
+// Page-Wrapper
+
+#page-wrapper {
+    background: url(/img/background-page.png) 50% bottom repeat-y;
+    color: #ffffff;
+
+    padding-top: 1.75rem;
+}
+
+// Footer
+
+#site-footer {
+    height: 288px;
+    padding-top: 4em;
+    background: url(/img/background-footer.png) 50% 0 no-repeat;
+    color: rgba(255, 255, 255, .75);
+    font-size: 0.75em;
+}
+
+// Cookie-Warnung
+
+#cookie-warning {
+    .modal-dialog {
+        border: 10px solid red;
+        color: #000000;
+
+        h1 {
+            margin-top: 0;
+            color: #7f0000;
+        }
+    }
+
+    .modal-content {
+        padding: 10px 10px;
+        background: rgba(228, 228, 228, .85);
+
+        // border-radius deaktivieren. Bootstrap's $enable-rounded wirkt hier nicht!
+        border-radius: 0;
+
+        img {
+            width: 224px;
+            height: 224px;
+            float: left;
+        }
+    }
+}
+
+.ui-effects-transfer-cookie-warning {
+    border: 2px dotted #7f0000;
+    z-index: $zindex-modal + 1; // z-index von Bootstrap übertrumpfen
+}
+
+// Screenshots
+
+.card-block {
+    // vertikale Abstände verringern
+    padding: 0 1.25rem;
+}
+.card {
+    border: none;
+    background: transparent;
+}
+
+.small-header {
+    font-size: 1rem;
+}
+
+.media-date {
+    font-size: .8em;
+}
+
+// Videos
+
+.embed-responsive-13by10 {
+    padding-bottom: percentage(10 / 13);
+}
