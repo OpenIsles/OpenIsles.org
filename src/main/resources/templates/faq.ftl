@@ -101,6 +101,7 @@
                             <li>libSDL2-image</li>
                             <li>libSDL2-mixer</li>
                             <li>libSDL2-ttf</li>
+                            <li>libLua (5.3+)</li>
                             <@translate lang="de">
                                 <li>Google Test (optional, wenn du Tests laufen lassen willst)</li>
                                 <li>Doxygen (optional, wenn du die Dokumentation generieren lassen willst)</li>
