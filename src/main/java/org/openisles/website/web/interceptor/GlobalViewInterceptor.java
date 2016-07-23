@@ -18,9 +18,13 @@ import java.util.Map;
 public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
 
     private final Map<String, String> languageMap;
+    private final long timeOfDeployment;
 
     public GlobalViewInterceptor() {
         this.languageMap = LanguageMap.getInstance();
+
+        // Uhrzeit merken, wann es los ging
+        this.timeOfDeployment = System.currentTimeMillis();
     }
 
     @Override
@@ -113,5 +117,11 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
             response.setContentType("text/html; charset=UTF-8");
         }
         response.setHeader("Content-Language", requestInfo.getSiteLanguage());
+
+        if (response.getStatus() == HttpServletResponse.SC_OK) {
+            if (response.getHeader("Last-Modified") == null) {
+                response.setDateHeader("Last-Modified", timeOfDeployment);
+            }
+        }
     }
 }
