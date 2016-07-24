@@ -3,10 +3,6 @@
     <@translate lang="en">Goods – Game info</@translate>
 </#global>
 
-<#global additionalMetaTags>
-    <link rel="up" href="/game-infos.html" />
-</#global>
-
 <@layout.page>
 <div class="row">
     <div class="col-xs-12">
