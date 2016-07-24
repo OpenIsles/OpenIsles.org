@@ -12,16 +12,49 @@
         </h1>
         <p>
             <@translate lang="de">
-                - Baustelle - Sorry, dieser Bereich ist noch nicht fertig.<br />
-                Ich habs mir aber nicht nehmen lassen, schon die
-                Navigationspunkte anzulegen, damit du siehst, was noch kommen wird… :-)
+                Im Spiel gibt es die folgenden Waren. Auf der <a href="/game-infos/buildings.html">Gebäudeübersicht</a>
+                kannst du herausfinden, wie du sie herstellen kannst.
             </@translate>
             <@translate lang="en">
-                - Construction area - Sorry, but this area is not yet done.<br />
-                I couldn't resist however adding the navigation points already, so you'll
-                see what is going to come… :-)
+                In the game the following goods exist. You can find out how to produce these look at the
+                <a href="/game-infos/buildings.html">Building's overview</a>.
             </@translate>
         </p>
+
+        <#list goods as goodGroup>
+            <#assign heading>
+                <#switch goodGroup.group>
+                    <#case "RAW_MATERIAL">
+                        <@translate lang="de">Rohstoffe</@translate>
+                        <@translate lang="en">Row materials</@translate>
+                        <#break>
+                    <#case "CONSUMER_GOOD">
+                        <@translate lang="de">Verbrauchsgüter</@translate>
+                        <@translate lang="en">Consumer goods</@translate>
+                        <#break>
+                    <#case "BUILDING_MATERIAL">
+                        <@translate lang="de">Baumaterialen</@translate>
+                        <@translate lang="en">Building materials</@translate>
+                        <#break>
+                </#switch>
+            </#assign>
+            <h2>${heading}</h2>
+
+            <div class="card-group m-y-1">
+                <#list goodGroup.goods as good>
+                    <div class="card text-xs-center">
+                        <img class="card-img-top"
+                             src="//${staticHostName}/img/goods/${good.iconName}.png"
+                             title="${good.name[siteLanguage]}" alt="${good.name[siteLanguage]}"/>
+                        <div class="card-block">
+                            <p class="card-text">
+                                ${good.name[siteLanguage]}
+                            </p>
+                        </div>
+                    </div>
+                </#list>
+            </div>
+        </#list>
     </div>
 </div>
 </@layout.page>

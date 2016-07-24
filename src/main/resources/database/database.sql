@@ -311,3 +311,28 @@ INSERT INTO video (order_index, file_prefix, description_de, description_en, cre
         'Very early stage of development when something is moving for the first time. The video shows a carrier taking his first steps.',
         '2014-10-14'
     );
+
+CREATE TABLE good (
+    order_index INT NOT NULL AUTO_INCREMENT COMMENT 'fortlaufender Zähler für die Sortierreihenfolge',
+    "group" VARCHAR(24) NOT NULL COMMENT 'Gruppe des Guts',
+    icon_name VARCHAR(64) NOT NULL COMMENT 'URL-Teil ohne Dateiendung für den Dateinamen des Symbols',
+    name_de VARCHAR(92) NOT NULL COMMENT 'Name (deutsch)',
+    name_en VARCHAR(92) NOT NULL COMMENT 'Name (englisch)',
+    PRIMARY KEY (order_index)
+);
+
+INSERT INTO good (icon_name, "group", name_de, name_en) VALUES
+    ('wool', 0, 'Wolle', 'Wool'),
+    ('sugar', 0, 'Zucker', 'Sugar'),
+    ('tobacco', 0, 'Tabak', 'Tobacco'),
+    ('cattle', 0, 'Schlachtvieh', 'Cattle'),
+    ('grain', 0, 'Korn', 'Grain'),
+    ('flour', 0, 'Mehl', 'Flour'),
+    ('food', 1, 'Nahrung', 'Food'),
+    ('tobacco-goods', 1, 'Tabakwaren', 'Tobacco goods'),
+    ('spices', 1, 'Gewürze', 'Spices'),
+    ('alcohol', 1, 'Alkohol', 'Alcohol'),
+    ('cloth', 1, 'Stoffe', 'Cloth'),
+    ('tools', 2, 'Werkzeuge', 'Tools'),
+    ('wood', 2, 'Holz', 'Wood'),
+    ('bricks', 2, 'Ziegel', 'Bricks');
