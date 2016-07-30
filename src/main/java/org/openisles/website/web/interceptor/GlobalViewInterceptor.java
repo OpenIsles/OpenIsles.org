@@ -6,6 +6,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
@@ -63,8 +64,17 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
         }
 
         // Weiterleiten
+        String url = request.getRequestURI();
+        String errorRequestUri = (String) request.getAttribute(RequestDispatcher.ERROR_REQUEST_URI);
+        if (errorRequestUri != null) {
+            // Wir sind hier gelandet, weil eine Fehlerseite einen internen Forward ausgelöst hat.
+            // Dann müssen wir die *ursprüngliche* URL verwenden, um nicht direkt auf die "/error/..."-URL
+            // zu leiten; die soll nämlich keiner sehen.
+            url = errorRequestUri;
+        }
+
         String port = requestInfo.isLocalDevelopment() ? ":8080" : "";
-        String newLocation = "http://" + siteLanguage + "." + requestInfo.getBaseHost() + port + request.getRequestURI();
+        String newLocation = "http://" + siteLanguage + "." + requestInfo.getBaseHost() + port + url;
         response.sendRedirect(newLocation);
         return false;
     }
