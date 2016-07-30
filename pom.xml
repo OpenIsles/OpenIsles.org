@@ -81,24 +81,39 @@
         <finalName>openisles.org-website</finalName>
 
         <plugins>
-            <!-- Thumbnails für die Screenshots generieren -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.5.0</version>
                 <executions>
+                    <!-- Thumbnails für die Screenshots generieren -->
                     <execution>
+                        <id>generate-thumbnails</id>
                         <goals>
                             <goal>exec</goal>
                         </goals>
                         <phase>generate-resources</phase>
+                        <configuration>
+                            <executable>bash</executable>
+                            <arguments>src/other/generate-thumbnails.sh</arguments>
+                            <workingDirectory>${basedir}</workingDirectory>
+                        </configuration>
+                    </execution>
+
+                    <!-- Gebäude-Grafiken aus OpenIsles kopieren -->
+                    <execution>
+                        <id>generate-buildings</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <executable>bash</executable>
+                            <arguments>src/other/generate-buildings.sh</arguments>
+                            <workingDirectory>${basedir}</workingDirectory>
+                        </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <executable>bash</executable>
-                    <arguments>src/other/generate-thumbnails.sh</arguments>
-                    <workingDirectory>${basedir}</workingDirectory>
-                </configuration>
             </plugin>
 
             <!-- SASS-Compiler -->

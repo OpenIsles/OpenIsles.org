@@ -21,7 +21,7 @@
             </@translate>
         </p>
 
-        <#list goods as goodGroup>
+        <#list goodGroups as goodGroup>
             <#assign heading>
                 <#switch goodGroup.group>
                     <#case "RAW_MATERIAL">
@@ -45,7 +45,7 @@
                     <div class="card text-xs-center">
                         <img class="card-img-top"
                              src="//${staticHostName}/img/goods/${good.iconName}.png"
-                             title="${good.name[siteLanguage]}" alt="${good.name[siteLanguage]}"/>
+                             title="${good.name[siteLanguage]}" alt="${good.name[siteLanguage]}" />
                         <div class="card-block">
                             <p class="card-text">
                                 ${good.name[siteLanguage]}

@@ -31,9 +31,16 @@
     <url>
         <loc>http://${siteLanguage}.${baseHost}/game-infos/goods.html</loc>
     </url>
+
     <url>
         <loc>http://${siteLanguage}.${baseHost}/game-infos/buildings.html</loc>
     </url>
+    <#list buildings as building>
+        <url>
+            <loc>http://${siteLanguage}.${baseHost}/game-infos/buildings/${building.name}.html</loc>
+        </url>
+    </#list>
+
     <url>
         <loc>http://${siteLanguage}.${baseHost}/game-infos/inhabitants.html</loc>
     </url>

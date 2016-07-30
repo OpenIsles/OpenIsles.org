@@ -1,4 +1,4 @@
-package org.openisles.website.web.controller;
+package org.openisles.website.web.controller.gameinfos;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 
 @Controller
 @Transactional
-public class GameInfosController {
+public class GoodsController {
 
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public GameInfosController(SessionFactory sessionFactory) {
+    public GoodsController(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -30,26 +30,26 @@ public class GameInfosController {
     @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_GOODS })
     public String goods(Model model) {
         Session session = sessionFactory.getCurrentSession();
-        List<GoodsModel> goods = session
+        List<GoodsGroupModel> goodGroups = session
                 .createQuery("from Good order by group asc, orderIndex asc", Good.class)
                 .list()
                 .stream()
                     .collect(Collectors.groupingBy(Good::getGroup, LinkedHashMap::new, Collectors.toList()))
                     .entrySet()
                     .stream()
-                        .map(entry -> new GoodsModel(entry.getKey(), entry.getValue()))
+                        .map(entry -> new GoodsGroupModel(entry.getKey(), entry.getValue()))
                         .collect(Collectors.toList());
 
-        model.addAttribute("goods", goods);
+        model.addAttribute("goodGroups", goodGroups);
         return "game-infos/goods";
     }
 
 
-    public class GoodsModel {
+    public static class GoodsGroupModel {
         private Good.Group group;
         private List<Good> goods;
 
-        GoodsModel(Good.Group group, List<Good> goods) {
+        GoodsGroupModel(Good.Group group, List<Good> goods) {
             this.group = group;
             this.goods = goods;
         }
@@ -60,14 +60,6 @@ public class GameInfosController {
 
         public List<Good> getGoods() {
             return goods;
-        }
-
-        @Override
-        public String toString() {
-            return "GoodsModel{" +
-                    "group=" + group +
-                    ", goods=" + goods +
-                    '}';
         }
     }
 

@@ -314,8 +314,8 @@ INSERT INTO video (order_index, file_prefix, description_de, description_en, cre
 
 CREATE TABLE good (
     order_index INT NOT NULL AUTO_INCREMENT COMMENT 'fortlaufender Zähler für die Sortierreihenfolge',
-    "group" VARCHAR(24) NOT NULL COMMENT 'Gruppe des Guts',
     icon_name VARCHAR(64) NOT NULL COMMENT 'URL-Teil ohne Dateiendung für den Dateinamen des Symbols',
+    "group" VARCHAR(24) NOT NULL COMMENT 'Gruppe des Guts',
     name_de VARCHAR(92) NOT NULL COMMENT 'Name (deutsch)',
     name_en VARCHAR(92) NOT NULL COMMENT 'Name (englisch)',
     PRIMARY KEY (order_index)
@@ -336,3 +336,45 @@ INSERT INTO good (icon_name, "group", name_de, name_en) VALUES
     ('tools', 2, 'Werkzeuge', 'Tools'),
     ('wood', 2, 'Holz', 'Wood'),
     ('bricks', 2, 'Ziegel', 'Bricks');
+
+CREATE TABLE building (
+    order_index INT NOT NULL AUTO_INCREMENT COMMENT 'fortlaufender Zähler für die Sortierreihenfolge',
+    name VARCHAR(64) NOT NULL COMMENT 'URL-Teil bzw. Verzeichnis für die Grafiken',
+    "group" VARCHAR(24) NOT NULL COMMENT 'Gruppe des Gebäudes',
+    title_de VARCHAR(92) NOT NULL COMMENT 'Titel (deutsch)',
+    title_en VARCHAR(92) NOT NULL COMMENT 'Titel (englisch)',
+    PRIMARY KEY (order_index)
+);
+
+INSERT INTO building (name, "group", title_de, title_en) VALUES
+    ('square1', 0, 'Platz I', 'Square I'),
+    ('square2', 0, 'Platz II', 'Square II'),
+    ('square3', 0, 'Platz III', 'Square III'),
+
+    ('weaving-mill1', 1, 'Webstube', 'Weaving mill'),
+    ('butchers', 1, 'Fleischerei', 'Butcher''s'),
+    ('stonemason', 1, 'Steinbruch', 'Stonemason'),
+    ('distillery', 1, 'Rumbrennerei', 'Distillery'),
+    ('tobacco-goods', 1, 'Tabakwaren', 'Tobacco goods'),
+    ('bakery', 1, 'Bäckerei', 'Bakery'),
+    ('toolsmiths', 1, 'Werkzeugschmiede', 'Toolsmith''s'),
+
+    ('hunters-hut', 2, 'Jägerhütte', 'Hunter''s hut'),
+    ('foresters', 2, 'Forsthaus', 'Forester''s'),
+    ('sheep-farm', 2, 'Schaffarm', 'Sheep farm'),
+    ('cattle-farm', 2, 'Rinderfarm', 'Cattle farm'),
+    ('sugarcane-plantation', 2, 'Zuckerrohrplantage', 'Sugarcane plantation'),
+    ('tobacco-plantation', 2, 'Tabakplantage', 'Tobacco plantation'),
+    ('spices-plantation', 2, 'Gewürzplantage', 'Spices plantation'),
+    ('grain-farm', 2, 'Getreidefarm', 'Grain mill'),
+
+    ('pier', 3, 'Anlegestelle', 'Pier'),
+    ('office1', 3, 'Kontor I', 'Office I'),
+    ('office2', 3, 'Kontor II', 'Office II'),
+
+    ('marketplace', 4, 'Marktplatz', 'Marketplace'),
+    ('chapel', 4, 'Kapelle', 'Chapel'),
+    ('tavern', 4, 'Wirtshaus', 'Tavern'),
+    ('school', 4, 'Schule', 'School'),
+    ('church', 4, 'Kirche', 'Church'),
+    ('cathedral', 4, 'Kathedrale', 'Cathedral');

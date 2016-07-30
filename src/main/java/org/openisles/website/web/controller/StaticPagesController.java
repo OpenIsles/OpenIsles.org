@@ -20,12 +20,6 @@ public class StaticPagesController {
         return "faq";
     }
 
-    @GetMapping("/game-infos/buildings.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_BUILDINGS })
-    public String gameInfosBuildings() {
-        return "game-infos/buildings";
-    }
-
     @GetMapping("/game-infos/inhabitants.html")
     @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_INHABITANTS })
     public String gameInfosInhabitants() {
