@@ -4,6 +4,7 @@ import org.openisles.website.web.interceptor.Nav;
 import org.openisles.website.web.interceptor.NavsActive;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class StaticPagesController {
@@ -12,6 +13,12 @@ public class StaticPagesController {
     @NavsActive(Nav.HOME)
     public String home() {
         return "home";
+    }
+
+    @GetMapping(path = "/robots.txt", produces = "text/plain; charset=UTF-8")
+    @ResponseBody
+    public String robotsTxt() {
+        return ""; // leere Textdatei simulieren
     }
 
     @GetMapping("/faq.html")
