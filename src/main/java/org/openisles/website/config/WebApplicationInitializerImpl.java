@@ -23,6 +23,5 @@ public class WebApplicationInitializerImpl implements WebApplicationInitializer 
 
         springDispatcher.setLoadOnStartup(1);
         springDispatcher.addMapping("/");
-        springDispatcher.addMapping("*.html");
     }
 }
