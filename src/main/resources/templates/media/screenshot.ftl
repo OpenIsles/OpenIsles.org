@@ -1,5 +1,5 @@
 <#global title>
-    ${screenshot.title[siteLanguage]} –
+    ${i18n(screenshot.titleKey)} –
     <@translate lang="de">Screenshot</@translate>
     <@translate lang="en">Screenshot</@translate>
 </#global>
@@ -8,7 +8,7 @@
     <#assign value>
         <@translate lang="de">Screenshot: </@translate>
         <@translate lang="en">Screenshot: </@translate>
-        ${screenshot.description[siteLanguage]}
+        ${i18n(screenshot.descriptionKey)}
     </#assign>
     <meta name="description" value="${value}" />
 </#global>
@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="text-xs-center">
-            <h2 class="small-header">${screenshot.title[siteLanguage]}</h2>
+            <h2 class="small-header">${i18n(screenshot.titleKey)}</h2>
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@
         <figure class="figure text-xs-center">
             <a href="/media/screenshots/${nextScreenshot.urlName}.html">
                 <img class="img-fluid" src="//${staticHostName}/media/screenshots/${screenshot.urlName}.png"
-                     title="${screenshot.title[siteLanguage]}" alt="${screenshot.description[siteLanguage]}" />
+                     title="${i18n(screenshot.titleKey)}" alt="${i18n(screenshot.descriptionKey)}" />
             </a>
 
             <br />
@@ -64,7 +64,7 @@
             </a>
 
             <figcaption class="text-xs-center p-t-1">
-                ${screenshot.description[siteLanguage]}
+                ${i18n(screenshot.descriptionKey)}
                 <br />
 
                 <span class="media-date">

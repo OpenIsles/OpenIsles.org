@@ -35,13 +35,13 @@
                     <div class="card text-xs-center">
                         <div class="card-block">
                             <div class="embed-responsive embed-responsive-13by10">
-                                <video src="//${staticHostName}/media/videos/${video.filePrefix}.ogv" controls></video>
+                                <video src="//${staticHostName}/media/videos/${video.urlName}.ogv" controls></video>
                             </div>
 
                             <p class="card-text">
                                 <small>${video.createdDate?date?string.long}:</small>
                                 <br />
-                                ${video.description[siteLanguage]}
+                                ${i18n(video.descriptionKey)}
                             </p>
                         </div>
                     </div>

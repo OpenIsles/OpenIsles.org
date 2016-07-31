@@ -21,31 +21,7 @@
         </p>
 
         <#list buildingGroups as buildingGroup>
-            <#assign heading>
-                <#switch buildingGroup.group>
-                    <#case "ROAD">
-                        <@translate lang="de">Straßen und Brücken</@translate>
-                        <@translate lang="en">Roads and bridges</@translate>
-                        <#break>
-                    <#case "CRAFTSMAN">
-                        <@translate lang="de">Handwerksbetriebe</@translate>
-                        <@translate lang="en">Craftsmanship</@translate>
-                        <#break>
-                    <#case "FARM">
-                        <@translate lang="de">Farmen &amp; Plantagen</@translate>
-                        <@translate lang="en">Farms &amp; plantations</@translate>
-                        <#break>
-                    <#case "PORT">
-                        <@translate lang="de">Hafenanlagen</@translate>
-                        <@translate lang="en">Port facilities</@translate>
-                        <#break>
-                    <#case "PUBLIC">
-                        <@translate lang="de">Öffentliche Gebäude</@translate>
-                        <@translate lang="en">Public buildings</@translate>
-                        <#break>
-                </#switch>
-            </#assign>
-            <h2>${heading}</h2>
+            <h2>${i18n(buildingGroup.group.titleKey)}</h2>
 
             <div class="card-group m-y-1">
                 <#list buildingGroup.buildings as building>
@@ -53,11 +29,11 @@
                         <a href="/game-infos/buildings/${building.name}.html">
                             <img class="card-img-top"
                                  src="//${staticHostName}/img/buildings/${building.name}/angle0.png"
-                                 title="${building.title[siteLanguage]}" alt="${building.title[siteLanguage]}" />
+                                 title="${i18n(building.titleKey)}" alt="${i18n(building.titleKey)}" />
                         </a>
                         <div class="card-block">
                             <p class="card-text">
-                                ${building.title[siteLanguage]}
+                                ${i18n(building.titleKey)}
                             </p>
                         </div>
                     </div>

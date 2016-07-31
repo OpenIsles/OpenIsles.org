@@ -1,8 +1,8 @@
 package org.openisles.website.web.freemarker;
 
-import freemarker.template.SimpleScalar;
 import freemarker.template.TemplateMethodModelEx;
 import freemarker.template.TemplateModelException;
+import freemarker.template.TemplateScalarModel;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.context.support.MessageSourceAccessor;
 
@@ -26,12 +26,14 @@ public class I18nTemplateMethod implements TemplateMethodModelEx {
             throw new TemplateModelException("Illegal argument count. Expected was exactly one.");
         }
 
-        if (!(arguments.get(0) instanceof SimpleScalar)) {
+        Object rawArgument = arguments.get(0);
+        if (!(rawArgument instanceof TemplateScalarModel)) {
             throw new TemplateModelException("Argument must be a string (SimpleScalar)");
         }
-        String messageCode = ((SimpleScalar) arguments.get(0)).getAsString();
 
+        String messageCode = ((TemplateScalarModel) rawArgument).getAsString();
         Locale locale = LocaleContextHolder.getLocale();
+
         return messageSourceAccessor.getMessage(messageCode, locale);
     }
 }

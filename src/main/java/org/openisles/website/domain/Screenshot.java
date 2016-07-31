@@ -1,75 +1,55 @@
 package org.openisles.website.domain;
 
-import org.hibernate.annotations.Immutable;
-
-import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Date;
-import java.util.Map;
 
-@Entity
-@Immutable
-@Table(name = "screenshot")
-public class Screenshot extends Translatable {
+public class Screenshot {
 
-    @Column(name = "order_index", nullable = false)
-    private int orderIndex;
-
-    @Id
-    @Column(name = "url_name", nullable = false)
+    /**
+     * URL-Teil und eindeutiges Identifikationsmerkmal.
+     * Verwenden wir in der {@code messages.properties} für Titel und Beschreibung.
+     */
     private String urlName;
 
-    @Column(name = "title_de", nullable = false)
-    private String titleDe;
-
-    @Column(name = "description_de", nullable = false)
-    private String descriptionDe;
-
-    @Column(name = "title_en", nullable = false)
-    private String titleEn;
-
-    @Column(name = "description_en", nullable = false)
-    private String descriptionEn;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_date", nullable = false)
-    private Date createdDate;
+    /**
+     * Zeitpunkt, wann der Screenshot aufgenommen wurde
+     */
+    private LocalDateTime createdDateTime;
 
 
-    public int getOrderIndex() {
-        return orderIndex;
+    public Screenshot(String urlName, LocalDateTime createdDateTime) {
+        this.urlName = urlName;
+        this.createdDateTime = createdDateTime;
     }
 
     public String getUrlName() {
         return urlName;
     }
 
-    public String getTitleDe() {
-        return titleDe;
+    public LocalDateTime getCreatedDateTime() {
+        return createdDateTime;
     }
 
-    public String getDescriptionDe() {
-        return descriptionDe;
-    }
-
-    public String getTitleEn() {
-        return titleEn;
-    }
-
-    public String getDescriptionEn() {
-        return descriptionEn;
-    }
-
+    /**
+     * @return {@link #createdDateTime} als {@link java.util.Date},
+     *         weil FreeMarker die Java8-Zeittypen nicht verarbeiten kann.
+     */
     public Date getCreatedDate() {
-        return createdDate;
+        return Date.from(createdDateTime.toInstant(ZoneOffset.UTC));
     }
 
-    @Transient
-    public Map<String, String> getTitle() {
-        return getLangValueMap("title");
+    /**
+     * @return Message-Key für den Titel
+     */
+    public String getTitleKey() {
+        return "screenshot." + urlName + ".title";
     }
 
-    @Transient
-    public Map<String, String> getDescription() {
-        return getLangValueMap("description");
+    /**
+     * @return Message-Key für den Beschreibung
+     */
+    public String getDescriptionKey() {
+        return "screenshot." + urlName + ".description";
     }
 }

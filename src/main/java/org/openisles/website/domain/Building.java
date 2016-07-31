@@ -1,56 +1,36 @@
 package org.openisles.website.domain;
 
-import org.hibernate.annotations.Immutable;
+public class Building {
 
-import javax.persistence.*;
-import java.util.Map;
-
-@Entity
-@Immutable
-@Table(name = "building")
-public class Building extends Translatable {
-
-    @Id
-    @Column(name = "order_index", nullable = false)
-    private int orderIndex;
-
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @Enumerated(EnumType.ORDINAL)
-    @Column(name = "[group]", nullable = false)
+    /**
+     * Gruppe
+     */
     private Group group;
 
-    @Column(name = "title_de", nullable = false)
-    private String titleDe;
+    /**
+     * Name (wird für Grafiken und Message-Key verwendet)
+     */
+    private String name;
 
-    @Column(name = "title_en", nullable = false)
-    private String titleEn;
 
-
-    public int getOrderIndex() {
-        return orderIndex;
-    }
-
-    public String getName() {
-        return name;
+    public Building(Group group, String name) {
+        this.group = group;
+        this.name = name;
     }
 
     public Group getGroup() {
         return group;
     }
 
-    public String getTitleDe() {
-        return titleDe;
+    public String getName() {
+        return name;
     }
 
-    public String getTitleEn() {
-        return titleEn;
-    }
-
-    @Transient
-    public Map<String, String> getTitle() {
-        return getLangValueMap("title");
+    /**
+     * @return Message-Key für den Titel
+     */
+    public String getTitleKey() {
+        return "building." + name;
     }
 
 
@@ -59,7 +39,14 @@ public class Building extends Translatable {
         CRAFTSMAN, // Handwerksbetriebe
         FARM, // Farmen & Plantagen
         PORT, // Hafenanlagen
-        PUBLIC // Öffentliche Gebäude
+        PUBLIC; // Öffentliche Gebäude
+
+        /**
+         * @return Message-Key für den Titel
+         */
+        public String getTitleKey() {
+            return "building.group." + name();
+        }
     }
 
 }

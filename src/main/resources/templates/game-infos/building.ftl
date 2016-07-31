@@ -1,5 +1,5 @@
 <#global title>
-    ${building.title[siteLanguage]} –
+    ${i18n(building.titleKey)} –
     <@translate lang="de">Gebäude – Spielinfos</@translate>
     <@translate lang="en">Buildings – Game info</@translate>
 </#global>
@@ -7,7 +7,7 @@
 <@layout.page>
 <div class="row">
     <div class="col-xs-12">
-        <h1>${building.title[siteLanguage]}</h1>
+        <h1>${i18n(building.titleKey)}</h1>
 
         <figure>
             <figcaption>

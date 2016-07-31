@@ -22,33 +22,17 @@
         </p>
 
         <#list goodGroups as goodGroup>
-            <#assign heading>
-                <#switch goodGroup.group>
-                    <#case "RAW_MATERIAL">
-                        <@translate lang="de">Rohstoffe</@translate>
-                        <@translate lang="en">Row materials</@translate>
-                        <#break>
-                    <#case "CONSUMER_GOOD">
-                        <@translate lang="de">Verbrauchsgüter</@translate>
-                        <@translate lang="en">Consumer goods</@translate>
-                        <#break>
-                    <#case "BUILDING_MATERIAL">
-                        <@translate lang="de">Baumaterialen</@translate>
-                        <@translate lang="en">Building materials</@translate>
-                        <#break>
-                </#switch>
-            </#assign>
-            <h2>${heading}</h2>
+            <h2>${i18n(goodGroup.group.titleKey)}</h2>
 
             <div class="card-group m-y-1">
                 <#list goodGroup.goods as good>
                     <div class="card text-xs-center">
                         <img class="card-img-top"
-                             src="//${staticHostName}/img/goods/${good.iconName}.png"
-                             title="${good.name[siteLanguage]}" alt="${good.name[siteLanguage]}" />
+                             src="//${staticHostName}/img/goods/${good.name}.png"
+                             title="${i18n(good.titleKey)}" alt="${i18n(good.titleKey)}" />
                         <div class="card-block">
                             <p class="card-text">
-                                ${good.name[siteLanguage]}
+                                ${i18n(good.titleKey)}
                             </p>
                         </div>
                     </div>

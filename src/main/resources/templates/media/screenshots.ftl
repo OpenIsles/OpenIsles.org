@@ -39,7 +39,7 @@
                         <a href="/media/screenshots/${screenshot.urlName}.html">
                             <img class="card-img-top"
                                  src="//${staticHostName}/media/screenshots/thumbnails/${screenshot.urlName}.thumb.png"
-                                 title="${screenshot.title[siteLanguage]}" alt="${screenshot.description[siteLanguage]}" />
+                                 title="${i18n(screenshot.titleKey)}" alt="${i18n(screenshot.descriptionKey)}" />
                         </a>
                         <p class="card-text">
                             <small>

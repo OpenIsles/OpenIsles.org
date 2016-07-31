@@ -1,63 +1,50 @@
 package org.openisles.website.domain;
 
-import org.hibernate.annotations.Immutable;
+public class Good {
 
-import javax.persistence.*;
-import java.util.Map;
-
-@Entity
-@Immutable
-@Table(name = "good")
-public class Good extends Translatable {
-
-    @Id
-    @Column(name = "order_index", nullable = false)
-    private int orderIndex;
-
-    @Enumerated(EnumType.ORDINAL)
-    @Column(name = "[group]", nullable = false)
+    /**
+     * Gruppe
+     */
     private Group group;
 
-    @Column(name = "icon_name", nullable = false)
-    private String iconName;
-
-    @Column(name = "name_de", nullable = false)
-    private String nameDe;
-
-    @Column(name = "name_en", nullable = false)
-    private String nameEn;
+    /**
+     * Name (wird für Symbol und Message-Key verwendet)
+     */
+    private String name;
 
 
-    public int getOrderIndex() {
-        return orderIndex;
+    public Good(Group group, String name) {
+        this.group = group;
+        this.name = name;
     }
 
     public Group getGroup() {
         return group;
     }
 
-    public String getIconName() {
-        return iconName;
+    public String getName() {
+        return name;
     }
 
-    public String getNameDe() {
-        return nameDe;
-    }
-
-    public String getNameEn() {
-        return nameEn;
-    }
-
-    @Transient
-    public Map<String, String> getName() {
-        return getLangValueMap("name");
+    /**
+     * @return Message-Key für den Titel
+     */
+    public String getTitleKey() {
+        return "good." + name;
     }
 
 
     public enum Group {
         RAW_MATERIAL,
         CONSUMER_GOOD,
-        BUILDING_MATERIAL
+        BUILDING_MATERIAL;
+
+        /**
+         * @return Message-Key für den Titel
+         */
+        public String getTitleKey() {
+            return "good.group." + name();
+        }
     }
 
 }

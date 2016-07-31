@@ -19,7 +19,7 @@
             <loc>http://${siteLanguage}.${baseHost}/media/screenshots/${screenshot.urlName}.html</loc>
             <image:image>
                 <image:loc>http://${staticHostName}/media/screenshots/${screenshot.urlName}.png</image:loc>
-                <image:caption>${screenshot.title[siteLanguage]}</image:caption>
+                <image:caption>${i18n(screenshot.titleKey)}</image:caption>
             </image:image>
         </url>
     </#list>
