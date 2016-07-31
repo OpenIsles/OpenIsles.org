@@ -16,6 +16,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import static org.openisles.website.config.Consts.DEFAULT_LANGUAGE;
+
 public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
 
     private final Map<String, String> languageMap;
@@ -58,9 +60,9 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
             }
         }
 
-        // Keine oder unbekannte Sprache? Dann Deutsch nehmen
+        // Keine oder unbekannte Sprache? Dann unseren Default nehmen
         if (siteLanguage == null) {
-            siteLanguage = "de";
+            siteLanguage = DEFAULT_LANGUAGE;
         }
 
         // Weiterleiten

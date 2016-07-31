@@ -1,17 +1,23 @@
 package org.openisles.website.config;
 
 import freemarker.core.XHTMLOutputFormat;
+import org.openisles.website.web.freemarker.I18nTemplateMethod;
 import org.openisles.website.web.freemarker.TranslateDirective;
 import org.openisles.website.web.interceptor.GlobalViewInterceptor;
 import org.openisles.website.web.interceptor.PreProcessFilter;
+import org.openisles.website.web.interceptor.SubdomainLocaleResolver;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.MessageSourceAccessor;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ui.freemarker.SpringTemplateLoader;
 import org.springframework.web.servlet.HandlerMapping;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
@@ -21,7 +27,10 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
+import java.util.Locale;
 import java.util.Map;
+
+import static org.openisles.website.config.Consts.DEFAULT_LANGUAGE;
 
 /**
  * MVC-Konfiguration
@@ -29,6 +38,27 @@ import java.util.Map;
 @ComponentScan(basePackages = "org.openisles.website.web.controller")
 @Configuration
 public class MvcConfig extends WebMvcConfigurationSupport {
+
+    // Locale-Resolving und MessageSource //////////////////////////////////////////////////////////////////////////////
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new SubdomainLocaleResolver();
+    }
+
+    @Bean
+    public MessageSource messageSource() {
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setBasename("i18n/messages");
+        return messageSource;
+    }
+
+    @Bean
+    public MessageSourceAccessor messageSourceAccessor() {
+        return new MessageSourceAccessor(messageSource(), new Locale(DEFAULT_LANGUAGE));
+    }
+
+    // View-Resolving und FreeMarker-Konfiguration /////////////////////////////////////////////////////////////////////
 
     @Bean
     public FreeMarkerViewResolver viewResolver() {
@@ -44,6 +74,7 @@ public class MvcConfig extends WebMvcConfigurationSupport {
                 new freemarker.template.Configuration(freemarker.template.Configuration.VERSION_2_3_24);
         freeMarkerConfiguration.addAutoImport("layout", "auto-import/layout.ftl");
         freeMarkerConfiguration.setSharedVariable("translate", new TranslateDirective());
+        freeMarkerConfiguration.setSharedVariable("i18n", new I18nTemplateMethod(messageSourceAccessor()));
         freeMarkerConfiguration.setOutputFormat(XHTMLOutputFormat.INSTANCE);
         freeMarkerConfiguration.setTemplateLoader(new SpringTemplateLoader(applicationContext, "classpath:/templates"));
 
@@ -51,6 +82,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         freeMarkerConfigurer.setConfiguration(freeMarkerConfiguration);
         return freeMarkerConfigurer;
     }
+
+    // Auslieferung statischer Resourcen ///////////////////////////////////////////////////////////////////////////////
 
     @Bean
     public ResourceHttpRequestHandler resourceHandler() {
@@ -86,6 +119,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
             }
         };
     }
+
+    // globaler Interceptor ////////////////////////////////////////////////////////////////////////////////////////////
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

@@ -2,6 +2,7 @@ package org.openisles.website.web.freemarker;
 
 import freemarker.core.Environment;
 import freemarker.template.*;
+import org.springframework.context.i18n.LocaleContextHolder;
 
 import java.io.IOException;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class TranslateDirective implements TemplateDirectiveModel {
     public void execute(Environment env, Map params, TemplateModel[] loopVars,
                         TemplateDirectiveBody body) throws TemplateException, IOException {
 
-        String siteLanguage = ((TemplateScalarModel) env.getVariable("siteLanguage")).getAsString();
+        String siteLanguage = LocaleContextHolder.getLocale().getLanguage();
         String langValue = ((TemplateScalarModel) params.get("lang")).getAsString();
 
         if (langValue.equals(siteLanguage)) {
