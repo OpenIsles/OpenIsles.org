@@ -18,6 +18,13 @@ $enable-transitions: true;
 
 $navbar-padding-vertical: 1px; // Navigationsleiste in der Höhe verkleinern
 
+$breadcrumb-bg: rgba(0, 0, 0, 0.1);
+$breadcrumb-padding-vertical: 0;
+$breadcrumb-padding-horizontal: 0;
+$breadcrumb-divider: "»";
+$breadcrumb-divider-color: rgba(255, 255, 255, 0.75);
+$breadcrumb-active-color: $breadcrumb-divider-color;
+
 $hr-border-color: $body-color;
 $hr-border-width: 1px;
 

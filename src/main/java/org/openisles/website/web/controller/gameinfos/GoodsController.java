@@ -2,8 +2,7 @@ package org.openisles.website.web.controller.gameinfos;
 
 import org.openisles.website.data.Goods;
 import org.openisles.website.domain.Good;
-import org.openisles.website.web.interceptor.Nav;
-import org.openisles.website.web.interceptor.NavsActive;
+import org.openisles.website.web.support.AbstractController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,11 +12,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class GoodsController {
+public class GoodsController extends AbstractController {
 
     @GetMapping("/game-infos/goods.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_GOODS })
     public String goods(Model model) {
+        setBreadcrumb()
+                .nonClickableUrl("/game-infos.html")
+                .activeUrl("/game-infos/goods.html");
+
         List<GoodsGroupModel> goodGroups = Goods.getGoods().stream()
                 .collect(Collectors.groupingBy(Good::getGroup, LinkedHashMap::new, Collectors.toList()))
                 .entrySet()

@@ -65,67 +65,37 @@
                 <h1><a class="navbar-brand" href="/">OpenIsles</a></h1>
 
                 <ul class="nav navbar-nav">
-                    <li class="nav-item<#if navsActive['HOME']??> active</#if>">
-                        <a class="nav-link" href="/">
-                            <@translate lang="de">Startseite</@translate>
-                            <@translate lang="en">Home</@translate>
-                        </a>
+                    <li class="nav-item<#if navActive('/')> active</#if>">
+                        <a class="nav-link" href="/">${i18n("nav./")}</a>
                     </li>
-                    <li class="nav-item<#if navsActive['FAQ']??> active</#if>">
-                        <a class="nav-link" href="/faq.html">
-                            <@translate lang="de">FAQ</@translate>
-                            <@translate lang="en">FAQ</@translate>
-                        </a>
+                    <li class="nav-item<#if navActive('/faq.html')> active</#if>">
+                        <a class="nav-link" href="/faq.html">${i18n("nav./faq.html")}</a>
                     </li>
-                    <li class="nav-item dropdown<#if navsActive['MEDIA']??> active</#if>">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                            <@translate lang="de">Medien</@translate>
-                            <@translate lang="en">Media</@translate>
-                        </a>
+                    <li class="nav-item dropdown<#if navActive('/media.html')> active</#if>">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">${i18n("nav./media.html")}</a>
                         <ul class="dropdown-menu">
-                            <li<#if navsActive['MEDIA_SCREENSHOTS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/media/screenshots.html">
-                                    <@translate lang="de">Screenshots</@translate>
-                                    <@translate lang="en">Screenshots</@translate>
-                                </a>
+                            <li<#if navActive('/media/screenshots.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/media/screenshots.html">${i18n("nav./media/screenshots.html")}</a>
                             </li>
-                            <li<#if navsActive['MEDIA_VIDEOS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/media/videos.html">
-                                    <@translate lang="de">Videos</@translate>
-                                    <@translate lang="en">Videos</@translate>
-                                </a>
+                            <li<#if navActive('/media/videos.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/media/videos.html">${i18n("nav./media/videos.html")}</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown<#if navsActive['GAMEINFOS']??> active</#if>">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-                            <@translate lang="de">Spielinfos</@translate>
-                            <@translate lang="en">Game info</@translate>
-                        </a>
+                    <li class="nav-item dropdown<#if navActive('/game-infos.html')> active</#if>">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">${i18n("nav./game-infos.html")}</a>
                         <ul class="dropdown-menu">
-                            <li<#if navsActive['GAMEINFOS_GOODS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/game-infos/goods.html">
-                                    <@translate lang="de">Waren</@translate>
-                                    <@translate lang="en">Goods</@translate>
-                                </a>
+                            <li<#if navActive('/game-infos/goods.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/game-infos/goods.html">${i18n("nav./game-infos/goods.html")}</a>
                             </li>
-                            <li<#if navsActive['GAMEINFOS_BUILDINGS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/game-infos/buildings.html">
-                                    <@translate lang="de">Gebäude</@translate>
-                                    <@translate lang="en">Buildings</@translate>
-                                </a>
+                            <li<#if navActive('/game-infos/buildings.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/game-infos/buildings.html">${i18n("nav./game-infos/buildings.html")}</a>
                             </li>
-                            <li<#if navsActive['GAMEINFOS_INHABITANTS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/game-infos/inhabitants.html">
-                                    <@translate lang="de">Einwohner</@translate>
-                                    <@translate lang="en">Inhabitants</@translate>
-                                </a>
+                            <li<#if navActive('/game-infos/inhabitants.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/game-infos/inhabitants.html">${i18n("nav./game-infos/inhabitants.html")}</a>
                             </li>
-                            <li<#if navsActive['GAMEINFOS_SHIPS']??> class="active"</#if>>
-                                <a class="dropdown-item" href="/game-infos/ships.html">
-                                    <@translate lang="de">Schiffe</@translate>
-                                    <@translate lang="en">Ships</@translate>
-                                </a>
+                            <li<#if navActive('/game-infos/ships.html')> class="active"</#if>>
+                                <a class="dropdown-item" href="/game-infos/ships.html">${i18n("nav./game-infos/ships.html")}</a>
                             </li>
                         </ul>
                     </li>
@@ -170,6 +140,26 @@
         </nav>
 
         <section id="page-wrapper">
+            <#if breadcrumb??>
+                <nav>
+                    <div class="container">
+                        <ol class="breadcrumb">
+                            <#list breadcrumb as breadcrumbBit>
+                                <#if !breadcrumbBit?has_next>
+                                    <li class="breadcrumb-item active">${breadcrumbBit.title}</li>
+                                <#elseif breadcrumbBit.clickable>
+                                    <li class="breadcrumb-item">
+                                        <a href="${breadcrumbBit.url}">${breadcrumbBit.title}</a>
+                                    </li>
+                                <#else>
+                                    <li class="breadcrumb-item disabled">${breadcrumbBit.title}</li>
+                                </#if>
+                            </#list>
+                        </ol>
+                    </div>
+                </nav>
+            </#if>
+
             <div class="container">
                 <#nested />
             </div>
@@ -186,14 +176,8 @@
 
                     <div class="col-xs-12 text-xs-center col-md-4">
                         <br class="hidden-md-up" />
-                        <a href="/contact.html">
-                            <@translate lang="de">Kontakt &amp; Impressum</@translate>
-                            <@translate lang="en">Contact &amp; Imprint</@translate>
-                        </a> |
-                        <a href="/privacy.html">
-                            <@translate lang="de">Datenschutz</@translate>
-                            <@translate lang="en">Privacy</@translate>
-                        </a>
+                        <a href="/contact.html">${i18n("nav./contact.html")}</a> |
+                        <a href="/privacy.html">${i18n("nav./privacy.html")}</a>
                     </div>
 
                     <div class="col-xs-12 text-xs-center col-md-4 col-md-right">

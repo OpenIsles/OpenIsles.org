@@ -1,5 +1,6 @@
 package org.openisles.website.web.controller;
 
+import org.openisles.website.web.support.AbstractController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import java.util.logging.Logger;
  * Fehlerseiten
  */
 @Controller
-public class ErrorController {
+public class ErrorController extends AbstractController {
 
     private static final Logger logger = Logger.getLogger(ErrorController.class.getName());
 

@@ -2,6 +2,7 @@ package org.openisles.website.config;
 
 import freemarker.core.XHTMLOutputFormat;
 import org.openisles.website.web.freemarker.I18nTemplateMethod;
+import org.openisles.website.web.freemarker.NavActiveTemplateMethod;
 import org.openisles.website.web.freemarker.TranslateDirective;
 import org.openisles.website.web.interceptor.GlobalViewInterceptor;
 import org.openisles.website.web.interceptor.PreProcessFilter;
@@ -27,10 +28,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
-import java.util.Locale;
 import java.util.Map;
-
-import static org.openisles.website.config.Consts.DEFAULT_LANGUAGE;
 
 /**
  * MVC-Konfiguration
@@ -56,7 +54,8 @@ public class MvcConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public MessageSourceAccessor messageSourceAccessor() {
-        return new MessageSourceAccessor(messageSource(), new Locale(DEFAULT_LANGUAGE));
+        // kein Default-Locale angeben, damit der LocaleResolver befragt wird
+        return new MessageSourceAccessor(messageSource());
     }
 
     // View-Resolving und FreeMarker-Konfiguration /////////////////////////////////////////////////////////////////////
@@ -76,6 +75,7 @@ public class MvcConfig extends WebMvcConfigurationSupport {
         freeMarkerConfiguration.addAutoImport("layout", "auto-import/layout.ftl");
         freeMarkerConfiguration.setSharedVariable("translate", new TranslateDirective());
         freeMarkerConfiguration.setSharedVariable("i18n", new I18nTemplateMethod(messageSourceAccessor()));
+        freeMarkerConfiguration.setSharedVariable("navActive", new NavActiveTemplateMethod());
         freeMarkerConfiguration.setOutputFormat(XHTMLOutputFormat.INSTANCE);
         freeMarkerConfiguration.setTemplateLoader(new SpringTemplateLoader(applicationContext, "classpath:/templates"));
 

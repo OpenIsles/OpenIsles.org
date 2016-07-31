@@ -3,8 +3,7 @@ package org.openisles.website.web.controller.gameinfos;
 import org.openisles.website.data.Buildings;
 import org.openisles.website.domain.Building;
 import org.openisles.website.exception.HttpNotFoundException;
-import org.openisles.website.web.interceptor.Nav;
-import org.openisles.website.web.interceptor.NavsActive;
+import org.openisles.website.web.support.AbstractController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +14,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-public class BuildingsController {
+public class BuildingsController extends AbstractController {
 
     @GetMapping("/game-infos/buildings.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_BUILDINGS })
     public String gameInfosBuildings(Model model) {
+        setBreadcrumb()
+                .nonClickableUrl("/game-infos.html")
+                .activeUrl("/game-infos/buildings.html");
+
         List<BuildingGroupModel> buildingGroups = Buildings.getBuildings().stream()
                 .collect(Collectors.groupingBy(Building::getGroup, LinkedHashMap::new, Collectors.toList()))
                 .entrySet()
@@ -32,10 +34,15 @@ public class BuildingsController {
     }
 
     @GetMapping("/game-infos/buildings/{buildingName}.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_BUILDINGS })
     public String building(Model model, @PathVariable String buildingName) {
         Building building = Buildings.getByName(buildingName)
                 .orElseThrow(HttpNotFoundException::new);
+
+        setBreadcrumb()
+                .nonClickableUrl("/game-infos.html")
+                .clickableUrl("/game-infos/buildings.html")
+                .activeUrl("/game-infos/buildings/" + buildingName + ".html",
+                           messageSourceAccessor.getMessage(building.getTitleKey()));
 
         model.addAttribute("building", building);
         return "game-infos/building";

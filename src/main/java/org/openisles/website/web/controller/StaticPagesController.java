@@ -1,17 +1,18 @@
 package org.openisles.website.web.controller;
 
-import org.openisles.website.web.interceptor.Nav;
-import org.openisles.website.web.interceptor.NavsActive;
+import org.openisles.website.web.support.AbstractController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class StaticPagesController {
+public class StaticPagesController extends AbstractController {
 
     @GetMapping("/")
-    @NavsActive(Nav.HOME)
     public String home() {
+        setBreadcrumb()
+                .activeUrl("/");
+
         return "home";
     }
 
@@ -22,32 +23,44 @@ public class StaticPagesController {
     }
 
     @GetMapping("/faq.html")
-    @NavsActive(Nav.FAQ)
     public String faq() {
+        setBreadcrumb()
+                .activeUrl("/faq.html");
+
         return "faq";
     }
 
     @GetMapping("/game-infos/inhabitants.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_INHABITANTS })
     public String gameInfosInhabitants() {
+        setBreadcrumb()
+                .nonClickableUrl("/game-infos.html")
+                .activeUrl("/game-infos/inhabitants.html");
+
         return "game-infos/inhabitants";
     }
 
     @GetMapping("/game-infos/ships.html")
-    @NavsActive({ Nav.GAMEINFOS, Nav.GAMEINFOS_SHIPS })
     public String gameInfosShips() {
+        setBreadcrumb()
+                .nonClickableUrl("/game-infos.html")
+                .activeUrl("/game-infos/ships.html");
+
         return "game-infos/ships";
     }
 
     @GetMapping("/contact.html")
-    @NavsActive(Nav.CONTACT)
     public String contact() {
+        setBreadcrumb()
+                .activeUrl("/contact.html");
+
         return "contact";
     }
 
     @GetMapping("/privacy.html")
-    @NavsActive(Nav.PRIVACY)
     public String privacy() {
+        setBreadcrumb()
+                .activeUrl("/privacy.html");
+
         return "privacy";
     }
 

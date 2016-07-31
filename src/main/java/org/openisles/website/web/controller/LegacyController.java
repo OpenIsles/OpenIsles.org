@@ -1,5 +1,6 @@
 package org.openisles.website.web.controller;
 
+import org.openisles.website.web.support.AbstractController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * Controller, der Seiten enthält, die es nicht mehr gibt
  */
 @Controller
-public class LegacyController {
+public class LegacyController extends AbstractController {
 
     @GetMapping(path = {
             "/media.html",

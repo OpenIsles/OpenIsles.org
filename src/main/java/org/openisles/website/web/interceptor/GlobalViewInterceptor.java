@@ -2,7 +2,7 @@ package org.openisles.website.web.interceptor;
 
 import org.openisles.website.config.LanguageMap;
 import org.openisles.website.exception.HttpNotFoundException;
-import org.springframework.web.method.HandlerMethod;
+import org.openisles.website.web.support.Breadcrumb;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -112,17 +112,9 @@ public class GlobalViewInterceptor extends HandlerInterceptorAdapter {
         modelAndView.addObject("baseHost", requestInfo.getBaseHost() + port);
         modelAndView.addObject("staticHostName", "static." + requestInfo.getBaseHost() + port);
 
-        // Ausgewählter Navigationspunkt
-        HashMap<String, Boolean> navsActive = new HashMap<>(2);
-        if (handler instanceof HandlerMethod) {
-            NavsActive annotation = ((HandlerMethod) handler).getMethodAnnotation(NavsActive.class);
-            if (annotation != null) {
-                for (Nav nav : annotation.value()) {
-                    navsActive.put(nav.name(), true);
-                }
-            }
-        }
-        modelAndView.addObject("navsActive", navsActive);
+        // Breadcrumb
+        Breadcrumb breadcrumb = (Breadcrumb) request.getAttribute(Breadcrumb.ATTRIBUTE_NAME);
+        modelAndView.addObject("breadcrumb", breadcrumb);
 
         // Header
         if (response.getContentType() == null) {
