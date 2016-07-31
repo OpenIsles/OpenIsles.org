@@ -29,6 +29,16 @@
             </#if>
         </title>
 
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "WebSite",
+                "name": "OpenIsles",
+                "alternateName": "OpenIsles.org",
+                "url": "http://www.openisles.org"
+            }
+        </script>
+
         <style type="text/css">
             @import "//${staticHostName}/css/app.css";
         </style>
