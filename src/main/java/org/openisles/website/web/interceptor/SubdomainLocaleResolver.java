@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Locale;
 
+import static org.openisles.website.config.Consts.DEFAULT_LANGUAGE;
+
 /**
  * <p>
  *     {@link LocaleResolver}, der die Sprache aus der Subdomain verwendet, die unser {@link PreProcessFilter} bereits
@@ -24,7 +26,14 @@ public class SubdomainLocaleResolver implements LocaleResolver {
         PreProcessFilter.RequestInfo requestInfo =
                 (PreProcessFilter.RequestInfo) request.getAttribute(PreProcessFilter.ATTRIBUTE_NAME_REQUEST_INFO);
 
-        return new Locale(requestInfo.getSiteLanguage());
+        String siteLanguage = requestInfo.getSiteLanguage();
+        if (siteLanguage != null) {
+            return new Locale(siteLanguage);
+        }
+
+        // Bei statischen Seiten ist kein Locale da.
+        // Das Interface schreibt aber "never null" vor, also geben wir einen Default zurück.
+        return new Locale(DEFAULT_LANGUAGE);
     }
 
     @Override
