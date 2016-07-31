@@ -157,6 +157,28 @@
                             </#list>
                         </ol>
                     </div>
+                    <script type="application/ld+json">
+                    {
+                        "@context": "http://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement":
+                        [
+                        <#list breadcrumb as breadcrumbBit>
+                            {
+                                "@type": "ListItem",
+                                "position": ${breadcrumbBit?counter},
+                                "item":
+                                {
+                                <#if !breadcrumbBit?has_next ||  breadcrumbBit.clickable>
+                                    "@id": "${breadcrumbBit.url}",
+                                </#if>
+                                    "name": "${breadcrumbBit.title}"
+                                }
+                            }<#sep>,</#sep>
+                        </#list>
+                        ]
+                    }
+                    </script>
                 </nav>
             </#if>
 
