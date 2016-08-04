@@ -13,7 +13,7 @@
 
 <@layout.page>
 <div class="row">
-    <div class="small-12 columns">
+    <div class="col-xs-12">
         <@translate lang="de">
             <h1>Screenshots</h1>
             <p>
