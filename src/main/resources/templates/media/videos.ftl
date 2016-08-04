@@ -18,14 +18,12 @@
             <h1>Videos</h1>
             <p>
                 Videos vom Spiel und der Entwicklung, chronologisch sortiert. Die neuesten Videos sind oben.
-                <small>Ok, sind erst zwei Stück ;-)</small>
             </p>
         </@translate>
         <@translate lang="en">
             <h1>Videos</h1>
             <p>
                 Videos from the game and development, ordered chronologically. The most recent videos are at the top.
-                <small>Ok, there are only two ones ;-)</small>
             </p>
         </@translate>
 

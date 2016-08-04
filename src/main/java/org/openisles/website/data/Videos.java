@@ -14,6 +14,18 @@ public final class Videos {
     static {
         videos = Collections.unmodifiableList(Arrays.asList(
                 new Video(
+                        "2016-06-10-grain-mill-animated",
+                        LocalDate.of(2016, Month.JUNE, 10)
+                ),
+                new Video(
+                        "2016-05-29-demolish",
+                        LocalDate.of(2016, Month.MAY, 29)
+                ),
+                new Video(
+                        "2016-04-16-houses-advancement",
+                        LocalDate.of(2016, Month.APRIL, 16)
+                ),
+                new Video(
                         "2015-05-17-growth",
                         LocalDate.of(2015, Month.MAY, 17)
                 ),

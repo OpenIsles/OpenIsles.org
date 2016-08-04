@@ -15,6 +15,22 @@ public final class Screenshots {
     static {
         screenshots = Collections.unmodifiableList(Arrays.asList(
                 new Screenshot(
+                        "2016-07-07-school-and-church",
+                        LocalDateTime.of(2016, Month.JULY, 7, 20, 15, 42)
+                ),
+                new Screenshot(
+                        "2016-06-12-ships",
+                        LocalDateTime.of(2016, Month.JUNE, 12, 11, 35, 46)
+                ),
+                new Screenshot(
+                        "2016-05-28-grain-fields-mill-and-bakery",
+                        LocalDateTime.of(2016, Month.MAY, 28, 18, 5, 12)
+                ),
+                new Screenshot(
+                        "2016-02-07-cattle",
+                        LocalDateTime.of(2016, Month.FEBRUARY, 7, 15, 4, 1)
+                ),
+                new Screenshot(
                         "2016-01-03-demanded-goods",
                         LocalDateTime.of(2016, Month.JANUARY, 3, 2, 45, 11)
                 ),
